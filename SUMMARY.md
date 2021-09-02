@@ -1,6 +1,6 @@
 # Table of contents
 
-* [테스트 페이지 입니다\(텐서플로 예제\)](README.md)
+* [메인페이지](README.md)
 * [소개](index.md)
 * [시작하기](index-1/README.md)
   * [다운로드 및 설치](index-1/os_setup.md)

@@ -10,6 +10,7 @@ description: Didim365에서 제공하는 다양한 상품을 보다 쉽고 빠�
 
 ### Didim365
 
+<center>
 #### - 디딤나우 포 파트너 문의하기
 
  [![(디딤나우 포 파트너 문의하기)](.gitbook/assets/logo_didimnowfp.png)](https://cloud.didim365.com/)
@@ -24,3 +25,4 @@ description: Didim365에서 제공하는 다양한 상품을 보다 쉽고 빠�
 
 닷넷피아 문의하기
 
+ </center>

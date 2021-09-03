@@ -10,12 +10,10 @@ description: Didim365에서 제공하는 다양한 상품을 보다 쉽고 빠�
 
 ### Didim365 
 
+디딤나우 포 파트너 문의하기
 ![&#xB514;&#xB524;&#xB098;&#xC6B0; &#xD3EC; &#xD30C;&#xD2B8;&#xB108; &#xBB38;&#xC758;&#xD558;&#xAE30;](.gitbook/assets/logo_main.gif)
 
- 디딤나우  회원 문의  하
-
-![](.gitbook/assets/logo_login.jpg)
-
+디딤나우 포 회원 문의하기
 ![](.gitbook/assets/logo_login.gif)
 
 ### 닷넷피아

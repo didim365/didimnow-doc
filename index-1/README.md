@@ -10,11 +10,11 @@ description: >-
 
 디딤나우의 클라우드 관련 서비스를 이용할 수 있는 웹 콘솔에 대한 기본적인 사용 방법 안내합니다.
 
-[콘솔 튜토리얼](../index-2/undefined/index.md)
+[콘솔 튜토리얼](../index-2/undefined-2/index.md)
 
 ## 디딤나우 포털
 
 디딤나우의 계정과 요금 및 서비스를 이용할 수 있는 웹 포털에 대한 기본적인 사용 방법 안내합니다.
 
-[포털 튜토리얼](../index-2/undefined/index.md)
+[포털 튜토리얼](../index-2/undefined-2/index.md)
 

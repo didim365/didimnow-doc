@@ -26,5 +26,9 @@
     * [텐서플로우 구조](index-2/undefined-2/index-2.md)
     * [MNIST 데이터 다운로드](index-2/undefined-2/index-3.md)
   * [방화벽 서비스](index-2/undefined.md)
-  * [SMS 발송 서비스](index-2/sms.md)
+  * [SMS 발송 서비스](index-2/sms/README.md)
+    * [ASP.NET\(C\#\)을 이용한 예제보기](index-2/sms/asp.net-c.md)
+    * [ASP.NET\(VB\)을 이용한 예제보기](index-2/sms/asp.net-vb.md)
+    * [ASP를 이용한 예제보기](index-2/sms/asp.md)
+    * [PHP을 이용한 예제보기](index-2/sms/php.md)
 

@@ -2,7 +2,7 @@
 
 TensorFlow는 큰 규모의 수치 계산에 적합한 강력한 라이브러리입니다. TensorFlow가 강력한 힘을 발휘하는 작업 중 하나는, 심층 신경망을 구성하고 학습시키는 것입니다. 이 튜토리얼에서는 MNIST 데이터를 분류하는 심층 합성곱\(convolutional\) 신경망을 구성하면서, TensorFlow에서 신경망 모델을 구성하는 기본 블록에 대해 알아볼 것입니다.
 
-_이 튜토리얼은 인공 신경망과 MNIST 데이터셋에 익숙한 독자를 위해 구성되어 있습니다. 만약 이들에 익숙하지 않다면,_ [_MNIST 초급_](index.md) _튜토리얼이 도움이 될 것입니다. 진행하기 전,_ [_Tensorflow가 설치_](../../index-1/os_setup.md)_되어 있는지 확인해 주세요._ 
+_이 튜토리얼은 인공 신경망과 MNIST 데이터셋에 익숙한 독자를 위해 구성되어 있습니다. 만약 이들에 익숙하지 않다면,_ [_MNIST 초급_](index.md) _튜토리얼이 도움이 될 것입니다. 진행하기 전,_ [_Tensorflow가 설치_]()_되어 있는지 확인해 주세요._ 
 
 ## 설정
 
@@ -23,7 +23,7 @@ mnist = input_data.read_data_sets('MNIST_data', one_hot=True)
 
 TensorFlow는 계산을 위해 고효율의 C++ 백엔드\(backend\)를 사용합니다. 이 백엔드와의 연결을 위해 TensorFlow는 세션\(session\)을 사용합니다. 일반적으로 TensorFlow 프로그램은 먼저 그래프를 구성하고, 그 이후 그래프를 세션을 통해 실행하는 방식을 따릅니다.
 
-여기서는 대신 TensorFlow 코드를 보다 유연하게 작성할 수 있게 해 주는 `InteractiveSession` 클래스를 사용할 것입니다. 이 클래스는 [계산 그래프](../../index-1/basic_usage.md#the-computation-graph)\(computation graph\)를 구성하는 작업과 그 그래프를 실행하는 작업을 분리시켜 줍니다. 즉, `InteractiveSession`을 쓰지 않는다면, 세션을 시작하여 [그래프를 실행](../../index-1/basic_usage.md#launching-the-graph-in-a-session)하기 전에 이미 전체 계산 그래프가 구성되어 있어야 하는 것입니다.
+여기서는 대신 TensorFlow 코드를 보다 유연하게 작성할 수 있게 해 주는 `InteractiveSession` 클래스를 사용할 것입니다. 이 클래스는 [계산 그래프]()\(computation graph\)를 구성하는 작업과 그 그래프를 실행하는 작업을 분리시켜 줍니다. 즉, `InteractiveSession`을 쓰지 않는다면, 세션을 시작하여 [그래프를 실행]()하기 전에 이미 전체 계산 그래프가 구성되어 있어야 하는 것입니다.
 
 ```python
 import tensorflow as tf
@@ -36,7 +36,7 @@ Python에서 효율적인 수치 계산을 하기 위해서, 주로 NumPy와 같
 
 TensorFlow도 마찬가지로 고비용의 연산은 Python 외부에서 실행합니다. 하지만, 위와 같은 오버헤드 문제를 피하기 위해 현명한 방법을 활용합니다. 각각의 고비용 연산을 Python에서 독립적으로 실행하는 대신, TensorFlow는 상호작용하는 연산을 그래프로 묶어 그 전체를 Python 바깥에서 실행시키는 방법을 사용합니다. Theano나 Torch와 같은 라이브러리에서 활용되는 방법과 비슷합니다.
 
-따라서 Python에서 작성하는 코드의 역할은, 이러한 외부의 계산 그래프를 구성하고, 이 계산 그래프의 어떤 부분이 실행되어야 하는지 지시하는 것입니다. 자세한 내용은 [계산 그래프](../../index-1/basic_usage.md#the-computation-graph) 및 [기본 사용법](../../index-1/basic_usage.md)을 참고하세요.
+따라서 Python에서 작성하는 코드의 역할은, 이러한 외부의 계산 그래프를 구성하고, 이 계산 그래프의 어떤 부분이 실행되어야 하는지 지시하는 것입니다. 자세한 내용은 [계산 그래프]() 및 [기본 사용법]()을 참고하세요.
 
 ## 소프트맥스 회귀 모델 구성
 
@@ -92,7 +92,7 @@ cross_entropy = tf.reduce_mean(-tf.reduce_sum(y_ * tf.log(y), reduction_indices=
 
 ## 모델 훈련시키기
 
-이제 모델과 훈련의 비용 함수가 정의되었으니, TensorFlow로 모델을 훈련시키는 일만 남았습니다. TensorFlow에 전체 계산 그래프의 정보가 입력되어 있으므로, 라이브러리가 자동으로 미분을 통해 각각의 변수에 대한 비용 함수의 기울기\(gradient\)를 계산합니다. TensorFlow는 다양한 [내장된 최적화 알고리즘](../../index-4/index-1/train.md#optimizers)을 가지고 있습니다. 여기서는 아래 코드와 같이 학습 속도 0.5의 경사 하강법\(steepest gradient descent\) 알고리즘을 사용하여 크로스 엔트로피를 최소화할 것입니다.
+이제 모델과 훈련의 비용 함수가 정의되었으니, TensorFlow로 모델을 훈련시키는 일만 남았습니다. TensorFlow에 전체 계산 그래프의 정보가 입력되어 있으므로, 라이브러리가 자동으로 미분을 통해 각각의 변수에 대한 비용 함수의 기울기\(gradient\)를 계산합니다. TensorFlow는 다양한 [내장된 최적화 알고리즘]()을 가지고 있습니다. 여기서는 아래 코드와 같이 학습 속도 0.5의 경사 하강법\(steepest gradient descent\) 알고리즘을 사용하여 크로스 엔트로피를 최소화할 것입니다.
 
 ```python
 train_step = tf.train.GradientDescentOptimizer(0.5).minimize(cross_entropy)

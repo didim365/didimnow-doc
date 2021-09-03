@@ -6,7 +6,7 @@
 
 이 튜토리얼은 일반적인 머신러닝 교육에 적합하지 않다.
 
-반드시 [TensorFlow 설치](../../index-1/os_setup.md) 지시를 따랐는지 확인하라.
+반드시 [TensorFlow 설치]() 지시를 따랐는지 확인하라.
 
 ## 튜토리얼 파일
 
@@ -51,7 +51,7 @@ data_sets = input_data.read_data_sets(FLAGS.train_dir, FLAGS.fake_data)
 
 ### 입력과 플레이스 홀더\(Placeholders\)
 
-`placeholder_inputs()` 함수는 두개의 [`tf.placeholder`](../../index-4/index-1/io_ops.md#placeholder) ops를 생성한다. 이 ops는 `batch_size` 를 포함해, 남은 그래프를 위한 입력 형태와 실제 트레이닝 example의 입력 형태를 정의한다.
+`placeholder_inputs()` 함수는 두개의 [`tf.placeholder`]() ops를 생성한다. 이 ops는 `batch_size` 를 포함해, 남은 그래프를 위한 입력 형태와 실제 트레이닝 example의 입력 형태를 정의한다.
 
 ```python
 images_placeholder = tf.placeholder(tf.float32, shape=(batch_size,
@@ -77,13 +77,13 @@ labels_placeholder = tf.placeholder(tf.int32, shape=(batch_size))
 
 이것은 이미지 플레이스 홀더를 입력으로 취하고 그 위에 출력 logits를 지정한 10 노드 선형 층\(ten node linear layer\)을 동반하는 \[ReLu\]\([https://en.wikipedia.org/wiki/Rectifier\_\(neural\_networks](https://en.wikipedia.org/wiki/Rectifier_%28neural_networks)\)\) activation을 가진 한 쌍의 완전 연결 층\(fully connected layer\)을 만든다.
 
-각 층은 고유한 [`tf.name_scope`](../../index-4/index-1/framework.md#name_scope) 아래에서 생성된다. 이것은 해당 범위\(scope\) 안에서 생성된 것에게 접두어와 같은 기능을 한다.
+각 층은 고유한 [`tf.name_scope`]() 아래에서 생성된다. 이것은 해당 범위\(scope\) 안에서 생성된 것에게 접두어와 같은 기능을 한다.
 
 ```python
 with tf.name_scope('hidden1'):
 ```
 
-정의된 범위 내, weights와 biases의 층을 요구되는 형태로 [`tf.Variable`](../../index-4/index-1/state_ops.md#Variable) 인스턴스 안에서 생성해 사용한다:
+정의된 범위 내, weights와 biases의 층을 요구되는 형태로 [`tf.Variable`]() 인스턴스 안에서 생성해 사용한다:
 
 ```python
 weights = tf.Variable(
@@ -98,11 +98,11 @@ biases = tf.Variable(tf.zeros([hidden1_units]),
 
 각 변수에게 initializer ops가 생성자\(construction\)의 일부로서 주어져 있다.
 
-보통의 경우에, weights는 [`tf.truncated_normal`](../../index-4/index-1/constant_op.md#truncated_normal)로 초기화 되고 2-D tensor의 형태가 된다. 첫 번째 dim\(차원. dimension\)은 weights가 연결해 나온 층의 유닛\(units\) 갯수이고 두 번째 dim은 weights가 연결한 층의 유닛 갯수이다. `hidden1`이라고 이름붙여진 첫 번째 레이어의 차원은 `[IMAGE_PIXELS, hidden1_units]` 다. 왜냐하면 weights가 이미지 입력과 hidden1 layer를 연결하고 있기 때문이다. `tf.truncated_normal` initializer는 주어진 평균과 표준 편차를 가지고 임의의 분포를 생성한다.
+보통의 경우에, weights는 [`tf.truncated_normal`]()로 초기화 되고 2-D tensor의 형태가 된다. 첫 번째 dim\(차원. dimension\)은 weights가 연결해 나온 층의 유닛\(units\) 갯수이고 두 번째 dim은 weights가 연결한 층의 유닛 갯수이다. `hidden1`이라고 이름붙여진 첫 번째 레이어의 차원은 `[IMAGE_PIXELS, hidden1_units]` 다. 왜냐하면 weights가 이미지 입력과 hidden1 layer를 연결하고 있기 때문이다. `tf.truncated_normal` initializer는 주어진 평균과 표준 편차를 가지고 임의의 분포를 생성한다.
 
-그 후에 biases가 모두 0 값을 가지고 시작하도록 biases를 [`tf.zeros`](../../index-4/index-1/constant_op.md#zeros)로 초기화한다. 그리고 그것의 형태는 단순히 연결된 층의 유닛 수가 된다.
+그 후에 biases가 모두 0 값을 가지고 시작하도록 biases를 [`tf.zeros`]()로 초기화한다. 그리고 그것의 형태는 단순히 연결된 층의 유닛 수가 된다.
 
-그래프의 세가지 기본적인 ops -- 숨겨진 층\(hidden layer\) [`tf.matmul`](../../index-4/index-1/math_ops.md#matmul) 을 감싸는 두개의 [`tf.nn.relu`](../../index-4/index-1/nn.md#relu) ops와 logits를 위한 추가 `tf.matmul` 하나 -- 가 분리된 `tf.Variable` 인스턴스와 함께 각각 차례대로 생성된다. 이 인스턴스는 각각의 입력 플레이스 홀더 또는 이전 레이어의 출력 tensor와 연결되어 있다.
+그래프의 세가지 기본적인 ops -- 숨겨진 층\(hidden layer\) [`tf.matmul`]() 을 감싸는 두개의 [`tf.nn.relu`]() ops와 logits를 위한 추가 `tf.matmul` 하나 -- 가 분리된 `tf.Variable` 인스턴스와 함께 각각 차례대로 생성된다. 이 인스턴스는 각각의 입력 플레이스 홀더 또는 이전 레이어의 출력 tensor와 연결되어 있다.
 
 ```python
 hidden1 = tf.nn.relu(tf.matmul(images, weights) + biases)
@@ -122,7 +122,7 @@ logits = tf.matmul(hidden2, weights) + biases
 
 `loss()` 함수는 필요한 loss ops를 더해 그래프를 더 발전시킨다.
 
-첫 번째로, `labels_placeholder` 에서 나온 값이 64비트 정수로 변환된다. 그 다음, [`tf.nn.sparse_softmax_cross_entropy_with_logits`](../../index-4/index-1/nn.md#sparse_softmax_cross_entropy_with_logits)가 `labels_placeholder`에서 1-hot label을 자동으로 생성하고 `inference()` 함수의 1-hot labels 출력 logits을 비교하기 위해 추가된다.
+첫 번째로, `labels_placeholder` 에서 나온 값이 64비트 정수로 변환된다. 그 다음, [`tf.nn.sparse_softmax_cross_entropy_with_logits`]()가 `labels_placeholder`에서 1-hot label을 자동으로 생성하고 `inference()` 함수의 1-hot labels 출력 logits을 비교하기 위해 추가된다.
 
 ```python
 labels = tf.to_int64(labels)
@@ -130,7 +130,7 @@ cross_entropy = tf.nn.sparse_softmax_cross_entropy_with_logits(
     logits, labels, name='xentropy')
 ```
 
-그 후에 batch dimension\(첫 번째 dimension\)에 걸친 cross entropy 값을 총 손실\(loss\)로 구하기 위해 [`tf.reduce_mean`](../../index-4/index-1/math_ops.md#reduce_mean)를 사용한다.
+그 후에 batch dimension\(첫 번째 dimension\)에 걸친 cross entropy 값을 총 손실\(loss\)로 구하기 위해 [`tf.reduce_mean`]()를 사용한다.
 
 ```python
 loss = tf.reduce_mean(cross_entropy, name='xentropy_mean')
@@ -144,19 +144,19 @@ loss = tf.reduce_mean(cross_entropy, name='xentropy_mean')
 
 `training()` 함수는 [Gradient Descent](https://en.wikipedia.org/wiki/Gradient_descent)를 통해 손실을 최소화하기 위해 필요한 작업을 추가한다.
 
-첫째로, `loss()` 함수로부터 loss tensor를 가지고 [`tf.scalar_summary`](../../index-4/index-1/train.md#scalar_summary)에 넘겨준다. [`tf.scalar_summary`](../../index-4/index-1/train.md#scalar_summary)는 `SummaryWriter`와 쓰일 때 이벤트 파일에 요약 값\(summary values\)을 생성하는 op다. 이 경우에, 이것은 요약이 기록될 때 마다 손실 값의 스냅샷\(snapshot\)를 내보낸다.
+첫째로, `loss()` 함수로부터 loss tensor를 가지고 [`tf.scalar_summary`]()에 넘겨준다. [`tf.scalar_summary`]()는 `SummaryWriter`와 쓰일 때 이벤트 파일에 요약 값\(summary values\)을 생성하는 op다. 이 경우에, 이것은 요약이 기록될 때 마다 손실 값의 스냅샷\(snapshot\)를 내보낸다.
 
 ```python
 tf.scalar_summary(loss.op.name, loss)
 ```
 
-다음으로, 요청된 학습률에 gradients를 적용하는 [`tf.train.GradientDescentOptimizer`](../../index-4/index-1/train.md#GradientDescentOptimizer) 인스턴스를 생성한다.
+다음으로, 요청된 학습률에 gradients를 적용하는 [`tf.train.GradientDescentOptimizer`]() 인스턴스를 생성한다.
 
 ```python
 optimizer = tf.train.GradientDescentOptimizer(learning_rate)
 ```
 
-그런 다음, 글로벌 트레이닝 단계\(global training step\)를 위한 카운터를 가진 변수 하나를 생성한다. [`minimize()`](../../index-4/index-1/train.md#Optimizer.minimize) op는 시스템 내에서 트레이닝 가능한 weights와 글로벌 단계의 진행을 업데이트한다. 관례상, 이것은 `train_op` 로 알려져 있다. 그리고 이것은 트레이닝의 전체적인 단계를 진행하기 위해 반드시 TensorFlow session에서 실행되어야 한다.\(아래 확인\)
+그런 다음, 글로벌 트레이닝 단계\(global training step\)를 위한 카운터를 가진 변수 하나를 생성한다. [`minimize()`]() op는 시스템 내에서 트레이닝 가능한 weights와 글로벌 단계의 진행을 업데이트한다. 관례상, 이것은 `train_op` 로 알려져 있다. 그리고 이것은 트레이닝의 전체적인 단계를 진행하기 위해 반드시 TensorFlow session에서 실행되어야 한다.\(아래 확인\)
 
 ```python
 global_step = tf.Variable(0, name='global_step', trainable=False)
@@ -171,7 +171,7 @@ train_op = optimizer.minimize(loss, global_step=global_step)
 
 ### 그래프
 
-`run_training()` 함수의 상단에 python 명령어 `with` 이 있다. 이 명령어는 만들어진 모든 ops가 default global [`tf.Graph`](../../index-4/index-1/framework.md#Graph) 인스턴스와 관련이 있음을 나타낸다.
+`run_training()` 함수의 상단에 python 명령어 `with` 이 있다. 이 명령어는 만들어진 모든 ops가 default global [`tf.Graph`]() 인스턴스와 관련이 있음을 나타낸다.
 
 ```python
 with tf.Graph().as_default():
@@ -183,7 +183,7 @@ with tf.Graph().as_default():
 
 ### 세션\(Session\)
 
-만들 준비가 모두 완료되고 필요한 모든 ops가 생성되었다면, 그래프를 실행하기 위해 [`tf.Session`](../../index-4/index-1/client.md#Session)을 만든다.
+만들 준비가 모두 완료되고 필요한 모든 ops가 생성되었다면, 그래프를 실행하기 위해 [`tf.Session`]()을 만든다.
 
 ```python
 sess = tf.Session()
@@ -197,14 +197,14 @@ with tf.Session() as sess:
 
 세션에 빈 파라미터는 이 코드가 기본 로컬 세션에 연결될 것임음\(아직 로컬 세션이 생성되지 않았다면 생성할 것임\)을 나타냅니다.
 
-세션을 생성한 직후 `tf.Variable`의 초기화 op에서 [`sess.run()`](../../index-4/index-1/client.md#Session.run)를 호출해 모든 `tf.Variable` 인스턴스가 초기화됩니다.
+세션을 생성한 직후 `tf.Variable`의 초기화 op에서 [`sess.run()`]()를 호출해 모든 `tf.Variable` 인스턴스가 초기화됩니다.
 
 ```python
 init = tf.initialize_all_variables()
 sess.run(init)
 ```
 
-[`sess.run()`](../../index-4/index-1/client.md#Session.run) 메소드는 파라미터로 전달된 op\(s\)에 대응하는 그래프의 완벽한 부분집합을 실행합니다. 첫 번째 경우에, `init` op는 변수들의 initializer만을 가지고 있는 [`tf.group`](../../index-4/index-1/control_flow_ops.md#group)입니다. 그래프의 남은 부분 중 어떤 것도 여기서는 실행되지 않습니다. 그것은 아래의 트레이닝 반복 루프에서 일어납니다.
+[`sess.run()`]() 메소드는 파라미터로 전달된 op\(s\)에 대응하는 그래프의 완벽한 부분집합을 실행합니다. 첫 번째 경우에, `init` op는 변수들의 initializer만을 가지고 있는 [`tf.group`]()입니다. 그래프의 남은 부분 중 어떤 것도 여기서는 실행되지 않습니다. 그것은 아래의 트레이닝 반복 루프에서 일어납니다.
 
 ### Train Loop
 
@@ -265,13 +265,13 @@ if step % 100 == 0:
 
 #### 상태 시각화
 
-[TensorBoard](../../index-3/index-2.md)에서 사용된 이벤트 파일을 내보내기 위해서, 그래프 작성 단계에서 모든 요약자료를 \(이 경우에는 하나\) 하나의 op에 모아야 한다.
+[TensorBoard]()에서 사용된 이벤트 파일을 내보내기 위해서, 그래프 작성 단계에서 모든 요약자료를 \(이 경우에는 하나\) 하나의 op에 모아야 한다.
 
 ```python
 summary_op = tf.merge_all_summaries()
 ```
 
-세션이 만들어진 후에, 그래프와 요약 값을 포함한 이벤트 파일을 작성하기 위해 [`tf.train.SummaryWriter`](../../index-4/index-1/train.md#SummaryWriter) 인스턴스가 생성되었을 것이다.
+세션이 만들어진 후에, 그래프와 요약 값을 포함한 이벤트 파일을 작성하기 위해 [`tf.train.SummaryWriter`]() 인스턴스가 생성되었을 것이다.
 
 ```python
 summary_writer = tf.train.SummaryWriter(FLAGS.train_dir, sess.graph)
@@ -288,23 +288,23 @@ summary_writer.add_summary(summary_str, step)
 
 ![MNIST TensorBoard](../../.gitbook/assets/mnist_tensorboard.png)
 
-**주의**: 어떻게 Tensorboard를 만들고 실행하는지에 대한 더 많은 정보는, 동봉된 튜토리얼을 보시기 바랍니다. [Tensorboard: 학습을 시각화하기](../../index-3/index-2.md).
+**주의**: 어떻게 Tensorboard를 만들고 실행하는지에 대한 더 많은 정보는, 동봉된 튜토리얼을 보시기 바랍니다. [Tensorboard: 학습을 시각화하기]().
 
 #### Save a Checkpoint
 
-나중에 추가적인 트레이닝이나 평가를 위해 모델을 복구하는데 쓰일 수 있는 checkpoint 파일을 내보내기 위해서, [`tf.train.Saver`](../../index-4/index-1/state_ops.md#Saver) 인스턴트를 생성합니다.
+나중에 추가적인 트레이닝이나 평가를 위해 모델을 복구하는데 쓰일 수 있는 checkpoint 파일을 내보내기 위해서, [`tf.train.Saver`]() 인스턴트를 생성합니다.
 
 ```python
 saver = tf.train.Saver()
 ```
 
-트레이닝 루프에서, 모든 트레이닝 할 수 있는 변수들의 현재 값을 트레이닝 디렉토리에 있는 checkpoint 파일에 쓰기 위해 [`saver.save()`](../../index-4/index-1/state_ops.md#Saver.save) 메소드를 정기적으로 호출한다.
+트레이닝 루프에서, 모든 트레이닝 할 수 있는 변수들의 현재 값을 트레이닝 디렉토리에 있는 checkpoint 파일에 쓰기 위해 [`saver.save()`]() 메소드를 정기적으로 호출한다.
 
 ```python
 saver.save(sess, FLAGS.train_dir, global_step=step)
 ```
 
-미래에 나중에 생성된 몇개의 포인터에서, 모델 파라미터를 불러오기 위해 [`saver.restore()`](../../index-4/index-1/state_ops.md#Saver.restore) 메소드를 사용해 트레이닝을 재개할 수도 있다.
+미래에 나중에 생성된 몇개의 포인터에서, 모델 파라미터를 불러오기 위해 [`saver.restore()`]() 메소드를 사용해 트레이닝을 재개할 수도 있다.
 
 ```python
 saver.restore(sess, FLAGS.train_dir)
@@ -346,7 +346,7 @@ do_eval(sess,
 eval_correct = mnist.evaluation(logits, labels_placeholder)
 ```
 
-`evaluation()` 함수는 단순히 [`tf.nn.in_top_k`](../../index-4/index-1/nn.md#in_top_k)op를 생성한다. 이 op는 자동적으로 참인 레이블이 K most-likely 예측에서 발견되면, 각 모델의 출력을 올바르다고 채점한다.  
+`evaluation()` 함수는 단순히 [`tf.nn.in_top_k`]()op를 생성한다. 이 op는 자동적으로 참인 레이블이 K most-likely 예측에서 발견되면, 각 모델의 출력을 올바르다고 채점한다.  
 이 경우에 참인 레이블에 대해 예측이 옳았을 경우만 K의 값을 1로 설정합니다.
 
 ```python

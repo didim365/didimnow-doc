@@ -8,7 +8,7 @@
 
 이번 튜토리얼 코드를 실행해보기 위해서:
 
-1. 텐서플로우를 설치하지 않았다면 [텐서플로 설치](../../index-1/os_setup.md)
+1. 텐서플로우를 설치하지 않았다면 [텐서플로 설치]()
 2. [튜토리얼 코드](https://www.tensorflow.org/code/tensorflow/examples/learn/wide_n_deep_tutorial.py) 다운로드.
 3. pandas 데이터 분석 라이브러리 설치.
 

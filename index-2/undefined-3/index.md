@@ -149,7 +149,7 @@ optimizer = tf.train.GradientDescentOptimizer(learning_rate=1.0).minimize(loss)
 
 ## 모델 학습하기
 
-모델을 학습하는 것은 데이터를 placeholders 에 넣기 위해 `feed_dict` 를 사용하는 것 만큼 간단하며 루프 내에서 새로운 데이터와 함께 [`session.run`](../../index-4/index-1/client.md#Session.run) 를 불러 함수를 사용할 수 있다.
+모델을 학습하는 것은 데이터를 placeholders 에 넣기 위해 `feed_dict` 를 사용하는 것 만큼 간단하며 루프 내에서 새로운 데이터와 함께 [`session.run`]() 를 불러 함수를 사용할 수 있다.
 
 ```python
 for inputs, labels in generate_batch(...):
@@ -179,9 +179,9 @@ hyperparameters 의 선정은 이 문제의 정확도에 매우 큰 영향을 �
 
 우리의 평범한 구현은 TensorFlow 이 다루기 쉬움을의 보여준다. 예를들어 학습 목적함수의 변화는 `tf.nn.nce_loss()` 을 `tf.nn.sampled_softmax_loss()` 와 같은 대체 함수로 교체하는 것 만큼 간단하다. loss 함수에 대해 새로운 아이디어가 있다면, TensorFlow 내에서 새로운 목적함수에 대해 직접 고쳐 표현할 수 있으며 최적화 도구로 이것의 미분을 계산할 수 있다. 여러 다른 아이디어를 시도하거나 빠르게 반복할 경우, 이러한 용이성은 머신 러닝 모델 개발의 탐색 단계에서 매우 가치가 있다.
 
-만족할 만한 모델 구조를 가지고 있다면, 당신의 구현을 더 효율적으로 실행하기 위해\(그리고 적은 시간에 더 많은 데이터를 다룰수 있게 하기 위해\) 최적화할 가치가 있을 수 있다. 예를 들어, 우리가 이 튜토리얼에서 사용한 간단한 코드는 데이터 아이템들을 읽고 대입하는데 --이들 각각은 TensorFlow back-end 에서 매우 적게 고려된다-- Python 을 사용하기 때문에 절충된 속도로 수행된다. 만일 당신의 모델이 입력 데이터에 대해 심각한 병목현상을 격는 것을 발견한다면, [New Data Formats](../../index-3/index-9.md) 에 설명된 것과 처럼, 수정된 데이터 리더\(reader\) 를 구현할 수 있을 것이다. Skip-gram 모델링의 경우, [tensorflow\_models/tutorials/embedding/word2vec.py](https://www.tensorflow.org/code/tensorflow_models/tutorials/embedding/word2vec.py) 의 예제와 같이 이미 다루었다.
+만족할 만한 모델 구조를 가지고 있다면, 당신의 구현을 더 효율적으로 실행하기 위해\(그리고 적은 시간에 더 많은 데이터를 다룰수 있게 하기 위해\) 최적화할 가치가 있을 수 있다. 예를 들어, 우리가 이 튜토리얼에서 사용한 간단한 코드는 데이터 아이템들을 읽고 대입하는데 --이들 각각은 TensorFlow back-end 에서 매우 적게 고려된다-- Python 을 사용하기 때문에 절충된 속도로 수행된다. 만일 당신의 모델이 입력 데이터에 대해 심각한 병목현상을 격는 것을 발견한다면, [New Data Formats]() 에 설명된 것과 처럼, 수정된 데이터 리더\(reader\) 를 구현할 수 있을 것이다. Skip-gram 모델링의 경우, [tensorflow\_models/tutorials/embedding/word2vec.py](https://www.tensorflow.org/code/tensorflow_models/tutorials/embedding/word2vec.py) 의 예제와 같이 이미 다루었다.
 
-당신의 모델이 입출력 바운드 뿐만아니라 더 높은 성능을 원한다면, [Adding a New Op](../../index-3/index-7.md) 에 설명된 것처럼, 당신의 TensorFlow Ops 작성을 통해 자세한 설명을 할 수 있다. 이것에 대한 Skip-Gram 예제는 [tensorflow\_models/tutorials/embedding/word2vec\_optimized.py](https://www.tensorflow.org/code/tensorflow_models/tutorials/embedding/word2vec_optimized.py) 에 제시했다. 각 단계의 성능 향상 측정을 위해 각각에 대해 자유롭게 벤치마크 해보자.
+당신의 모델이 입출력 바운드 뿐만아니라 더 높은 성능을 원한다면, [Adding a New Op]() 에 설명된 것처럼, 당신의 TensorFlow Ops 작성을 통해 자세한 설명을 할 수 있다. 이것에 대한 Skip-Gram 예제는 [tensorflow\_models/tutorials/embedding/word2vec\_optimized.py](https://www.tensorflow.org/code/tensorflow_models/tutorials/embedding/word2vec_optimized.py) 에 제시했다. 각 단계의 성능 향상 측정을 위해 각각에 대해 자유롭게 벤치마크 해보자.
 
 ## 결론
 

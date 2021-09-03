@@ -21,11 +21,11 @@ CIFAR-10 분류가 선택된 이유는 더 큰 모델을 다루는 데에 필요
 
 CIFAR-10 튜토리얼은 텐서플로우로 더 크고 복잡한 모델을 디자인하기 위한 몇몇의 주요 구성들을 설명합니다.
 
-* 주요 수학적 요소 : [Convolution](../../index-4/index-1/nn.md#conv2d) \([wiki](https://en.wikipedia.org/wiki/Convolution)\), [rectified linear activations](../../index-4/index-1/nn.md#relu) \(\[wiki\]\( [https://en.wikipedia.org/wiki/Rectifier\_\(neural\_networks](https://en.wikipedia.org/wiki/Rectifier_%28neural_networks)\)\)\), [Max Pooling](../../index-4/index-1/nn.md#max_pool) \([wiki](https://en.wikipedia.org/wiki/Convolutional_neural_network#Pooling_layer)\) and [local response normalization](../../index-4/index-1/nn.md#local_response_normalization) \(Chapter 3.3 in [AlexNet paper](http://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks.pdf)\).
-* 활성화\(Activations\)와 경사\(gradients\)의 손실\(loss\) 및 분포와 입력된 이미지를 포함하는 학습 중인 네트워크의 활동 [시각화](../../index-3/index-2.md)
-* 학습된 변수의 [이동 평균\(moving average\)](../../index-4/index-1/train.md#ExponentialMovingAverage)을 계산하는 방법과 평가를 할 때 예측 성능을 향상시키기 위하여 이 평균들을 이용하는 방법
-* 체계적으로 시간에 따라 감소하는 [학습 비율\(learning rate\) 스케쥴](../../index-4/index-1/train.md#exponential_decay)의 구현
-* 디스크 지연과 비싼 이미지 전처리를 모델로부터 분리하기 위한 입력 데이터 [큐](../../index-4/index-1/io_ops.md#shuffle_batch)의 선인출\(prefetching\)
+* 주요 수학적 요소 : [Convolution]() \([wiki](https://en.wikipedia.org/wiki/Convolution)\), [rectified linear activations]() \(\[wiki\]\( [https://en.wikipedia.org/wiki/Rectifier\_\(neural\_networks](https://en.wikipedia.org/wiki/Rectifier_%28neural_networks)\)\)\), [Max Pooling]() \([wiki](https://en.wikipedia.org/wiki/Convolutional_neural_network#Pooling_layer)\) and [local response normalization]() \(Chapter 3.3 in [AlexNet paper](http://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks.pdf)\).
+* 활성화\(Activations\)와 경사\(gradients\)의 손실\(loss\) 및 분포와 입력된 이미지를 포함하는 학습 중인 네트워크의 활동 [시각화]()
+* 학습된 변수의 [이동 평균\(moving average\)]()을 계산하는 방법과 평가를 할 때 예측 성능을 향상시키기 위하여 이 평균들을 이용하는 방법
+* 체계적으로 시간에 따라 감소하는 [학습 비율\(learning rate\) 스케쥴]()의 구현
+* 디스크 지연과 비싼 이미지 전처리를 모델로부터 분리하기 위한 입력 데이터 [큐]()의 선인출\(prefetching\)
 
 또한 저희는 모델의 [다중-GPU 버전](index.md#training-a-model-using-multiple-gpu-cards)을 제공합니다. 이 모델은 다음과 같은 사항들을 설명합니다:
 
@@ -62,27 +62,27 @@ CIFAR-10 네트워크는 주로 ['cifar10.py'](https://www.tensorflow.org/code/t
 
 ### 모델 입력
 
-모델의 입력 부분은 CIFAR-10 바이너리 데이터 파일로부터 이미지를 읽는 'inputs\(\)'와 'distorted\_inputs\(\)' 로 구성되어 있습니다. 이 데이터 파일들은 고정 바이트 길이 레코드를 담고있어, 우리는 [`tf.FixedLengthRecordReader`](../../index-4/index-1/io_ops.md#FixedLengthRecordReader)를 사용합니다. 'Reader' 클래스가 어떻게 작동하는지 더 알고 싶으시다면 [Reading Data](../../index-3/index-4.md#reading-from-files)를 참조하세요.
+모델의 입력 부분은 CIFAR-10 바이너리 데이터 파일로부터 이미지를 읽는 'inputs\(\)'와 'distorted\_inputs\(\)' 로 구성되어 있습니다. 이 데이터 파일들은 고정 바이트 길이 레코드를 담고있어, 우리는 [`tf.FixedLengthRecordReader`]()를 사용합니다. 'Reader' 클래스가 어떻게 작동하는지 더 알고 싶으시다면 [Reading Data]()를 참조하세요.
 
 이미지들은 아래의 과정을 통하여 처리됩니다.
 
 * 이미지는 24 x 24 픽셀로 잘라냅니다.
 
-  훈련을 위하여 [무작위로](../../index-4/index-1/constant_op.md#random_crop) 잘라내거나 혹은 평가를 위하여 중심만 잘라냅니다.
+  훈련을 위하여 [무작위로]() 잘라내거나 혹은 평가를 위하여 중심만 잘라냅니다.
 
-* 동적 범위 내에 모델이 둔감해지도록 [대략적인 화이트닝](../../index-4/index-1/image.md#per_image_whitening)을 합니다
+* 동적 범위 내에 모델이 둔감해지도록 [대략적인 화이트닝]()을 합니다
 
 훈련을 위하여 추가적으로 일련의 무작위 왜곡을 적용하여 인공적으로 데이터 셋의 크기를 키웁니다:
 
-* 이미지를 좌에서 우로 [무작위로 뒤집기](../../index-4/index-1/image.md#random_flip_left_right)
-* [이미지 밝기](../../index-4/index-1/image.md#random_brightness)를 무작위로 왜곡하기
-* [이미지 대비](../../index-4/index-1/image.md#random_contrast)를 무작위로 왜곡하기
+* 이미지를 좌에서 우로 [무작위로 뒤집기]()
+* [이미지 밝기]()를 무작위로 왜곡하기
+* [이미지 대비]()를 무작위로 왜곡하기
 
-가능한 왜곡의 목록은 [Images](../../index-4/index-1/image.md) 페이지를 참조하세요. 또한 [`image_summary`](../../index-4/index-1/train.md#image_summary)를 이미지에 붙여 [TensorBoard](../../index-3/index-2.md)에서 시각화 할 수 있도록 하였습니다. 이는 입력이 제대로 만들어 졌는지 확인하기 위한 좋은 연습이 될 것 입니다.
+가능한 왜곡의 목록은 [Images]() 페이지를 참조하세요. 또한 [`image_summary`]()를 이미지에 붙여 [TensorBoard]()에서 시각화 할 수 있도록 하였습니다. 이는 입력이 제대로 만들어 졌는지 확인하기 위한 좋은 연습이 될 것 입니다.
 
 ![](../../.gitbook/assets/cifar_image_summary.png)
 
-디스크에서 이미지를 읽고 왜곡을 하는 것은 적지 않은 양의 처리 시간이 필요할 수 있습니다. 이러한 작업이 훈련을 늦추는 것을 방지하기 위해, 우리는 이 작업을 16개의 독립된 스레드로 나누어 실행시킵니다. 이 스레드는 TensorFlow [큐](../../index-4/index-1/io_ops.md#shuffle_batch)를 계속해서 채웁니다.
+디스크에서 이미지를 읽고 왜곡을 하는 것은 적지 않은 양의 처리 시간이 필요할 수 있습니다. 이러한 작업이 훈련을 늦추는 것을 방지하기 위해, 우리는 이 작업을 16개의 독립된 스레드로 나누어 실행시킵니다. 이 스레드는 TensorFlow [큐]()를 계속해서 채웁니다.
 
 ### 모델 예측
 
@@ -90,21 +90,21 @@ CIFAR-10 네트워크는 주로 ['cifar10.py'](https://www.tensorflow.org/code/t
 
 | 레이어 명 | 설명 |
 | :--- | :--- |
-| `conv1` | [컨볼루션\(convolution\)](../../index-4/index-1/nn.md#conv2d) 과 [정류된 선형\(rectified linear\)](../../index-4/index-1/nn.md#relu) 활성화 레이어. |
-| `pool1` | [최대 풀링\(max pooling\)](../../index-4/index-1/nn.md#max_pool) 레이어. |
-| `norm1` | [지역 반응 정규화\(local response normalization\)](../../index-4/index-1/nn.md#local_response_normalization) 레이어. |
-| `conv2` | [컨볼루션\(convolution\)](../../index-4/index-1/nn.md#conv2d) 과 [정류된 선형\(rectified linear\)](../../index-4/index-1/nn.md#relu) 활성화 레이어. |
-| `norm2` | [지역 반응 정규화\(local response normalization\)](../../index-4/index-1/nn.md#local_response_normalization). |
-| `pool2` | [최대 풀링\(max pooling\)](../../index-4/index-1/nn.md#max_pool) 레이어. |
-| `local3` | [정류된 선형 활성화가 포함된 완전 연결 레이어\(fully connected layer with rectified linear activation\)](../../index-4/index-1/nn.md). |
-| `local4` | [정류된 선형 활성화가 포함된 완전 연결 레이어\(fully connected layer with rectified linear activation\)](../../index-4/index-1/nn.md). |
+| `conv1` | [컨볼루션\(convolution\)]() 과 [정류된 선형\(rectified linear\)]() 활성화 레이어. |
+| `pool1` | [최대 풀링\(max pooling\)]() 레이어. |
+| `norm1` | [지역 반응 정규화\(local response normalization\)]() 레이어. |
+| `conv2` | [컨볼루션\(convolution\)]() 과 [정류된 선형\(rectified linear\)]() 활성화 레이어. |
+| `norm2` | [지역 반응 정규화\(local response normalization\)](). |
+| `pool2` | [최대 풀링\(max pooling\)]() 레이어. |
+| `local3` | [정류된 선형 활성화가 포함된 완전 연결 레이어\(fully connected layer with rectified linear activation\)](). |
+| `local4` | [정류된 선형 활성화가 포함된 완전 연결 레이어\(fully connected layer with rectified linear activation\)](). |
 | `softmax_linear` | 로짓\(logit\)들을 생산하는 선형 변환\(linear transformation\) |
 
 아래의 그래프는 TensorBoard를 통해 생성된 추론\(inference\) 연산을 설명합니다.
 
 ![](../../.gitbook/assets/cifar_graph.png)
 
-> **연습**: '추론\(inference\)'의 출력값은 정규화되지 않은 로짓\(logit\)입니다. [`tf.nn.softmax()`](../../index-4/index-1/nn.md#softmax)을 사용하여 정규화된 예측값을 리턴하도록 네트워크 구조를 수정해보세요.
+> **연습**: '추론\(inference\)'의 출력값은 정규화되지 않은 로짓\(logit\)입니다. [`tf.nn.softmax()`]()을 사용하여 정규화된 예측값을 리턴하도록 네트워크 구조를 수정해보세요.
 
 'inputs\(\)'와 'inference\(\)' 함수는 모델을 평가하는데 필요한 모든 컴포넌트들을 제공합니다. 이제 우리는 모델을 훈련하는 작업을 구축하는 것으로 초점을 옮겨봅시다.
 
@@ -112,17 +112,17 @@ CIFAR-10 네트워크는 주로 ['cifar10.py'](https://www.tensorflow.org/code/t
 
 ### 모델 훈련
 
-N-way 분류를 수행하는 네트워크를 훈련시키는 일반적인 방법은 _소프트맥스 회귀\(Softmax regression\)_로 알려진 [다항 로지스틱 회귀\(multinomial logistic regression\)](https://en.wikipedia.org/wiki/Multinomial_logistic_regression)입니다. 소프트맥스 회귀\(Softmax regression\)는 네트워크의 출력값에 [softmax](../../index-4/index-1/nn.md#softmax) 비선형성을 적용하고, 정규화된 예측값과 [1-핫 인코딩\(1-hot encoding\)](../../index-4/index-1/sparse_ops.md#sparse_to_dense)된 라벨 사시의 [크로스 엔트로피\(cross-entropy\)](../../index-4/index-1/nn.md#softmax_cross_entropy_with_logits)를 계산합니다. 균일화\(regularization\)를 위하여, 우리는 모든 학습된 변수에 대하여 일반적인 [가중치 감소\(weight decay\)](../../index-4/index-1/nn.md#l2_loss) 손실을 적용합니다. 모델의 목적함수는 크로스 엔트로피 손실의 합과 'loss\(\)' 함수에 의해 리턴되는, 모든 가중치 감소\(weight decay\) 텀의 합입니다.
+N-way 분류를 수행하는 네트워크를 훈련시키는 일반적인 방법은 _소프트맥스 회귀\(Softmax regression\)_로 알려진 [다항 로지스틱 회귀\(multinomial logistic regression\)](https://en.wikipedia.org/wiki/Multinomial_logistic_regression)입니다. 소프트맥스 회귀\(Softmax regression\)는 네트워크의 출력값에 [softmax]() 비선형성을 적용하고, 정규화된 예측값과 [1-핫 인코딩\(1-hot encoding\)]()된 라벨 사시의 [크로스 엔트로피\(cross-entropy\)]()를 계산합니다. 균일화\(regularization\)를 위하여, 우리는 모든 학습된 변수에 대하여 일반적인 [가중치 감소\(weight decay\)]() 손실을 적용합니다. 모델의 목적함수는 크로스 엔트로피 손실의 합과 'loss\(\)' 함수에 의해 리턴되는, 모든 가중치 감소\(weight decay\) 텀의 합입니다.
 
-우리는 TensorBoard의 [`scalar_summary`](../../index-4/index-1/train.md#scalar_summary)를 사용하여 이를 시각화 하였습니다.
+우리는 TensorBoard의 [`scalar_summary`]()를 사용하여 이를 시각화 하였습니다.
 
 ![CIFAR-10 Total Loss](../../.gitbook/assets/cifar_loss.png)
 
-우리는 표준적인 [경사 강하\(gradient descent\)](https://en.wikipedia.org/wiki/Gradient_descent) 알고리즘 \(다른 방법을 보려면 [Training](../../index-4/index-1/train.md)을 참조\)을 사용하여 모델을 훈련합니다. 시간에 따라 [급격하게 감소\(exponentially decays\)](../../index-4/index-1/train.md#exponential_decay)하는 학습 비율\(learning rate\)을 사용하였습니다.
+우리는 표준적인 [경사 강하\(gradient descent\)](https://en.wikipedia.org/wiki/Gradient_descent) 알고리즘 \(다른 방법을 보려면 [Training]()을 참조\)을 사용하여 모델을 훈련합니다. 시간에 따라 [급격하게 감소\(exponentially decays\)]()하는 학습 비율\(learning rate\)을 사용하였습니다.
 
 ![CIFAR-10 Learning Rate Decay](../../.gitbook/assets/cifar_lr_decay.png)
 
-'train\(\)' 함수는 경사\(gradient\)를 계산하고 학습된 변수를 업데이트함으로써 목표를 최소화 하는데에 필요한 기능을 추가합니다 \( 자세한 사항은 [`GradientDescentOptimizer`](../../index-4/index-1/train.md#GradientDescentOptimizer) 참조\). 이 함수는 하나의 이미지 배치\(batch\)에 대하여 모델을 훈련하고 업데이트 하는데 필요한 모든 연산을 실행하는 기능을 리턴해줍니다.
+'train\(\)' 함수는 경사\(gradient\)를 계산하고 학습된 변수를 업데이트함으로써 목표를 최소화 하는데에 필요한 기능을 추가합니다 \( 자세한 사항은 [`GradientDescentOptimizer`]() 참조\). 이 함수는 하나의 이미지 배치\(batch\)에 대하여 모델을 훈련하고 업데이트 하는데 필요한 모든 연산을 실행하는 기능을 리턴해줍니다.
 
 ## 모델 실행 및 훈련 해보기
 
@@ -155,7 +155,7 @@ Filling queue with 20000 CIFAR images before starting to train. This will take a
 
 > **연습:** 실험할 때, 훈련의 첫 스텝이 오랜 시간이 소요되는 것이 때때로 짜증날 수 있습니다. 초기에 큐를 채우는 이미지의 수를 줄여보세요. `cifar10.py`에서 `NUM_EXAMPLES_PER_EPOCH_FOR_TRAIN`을 검색해보세요.
 
-`cifar10_train.py`는 주기적으로 모든 모델 파라미터를 [체크포인트 파일\(checkpoint files\)](../../index-3/index.md#saving-and-restoring)에 [저장](../../index-4/index-1/state_ops.md#Saver)합니다. 하지만 모델 자체를 평가하지는 _않습니다_. 체크포인트 파일은 `cifar10_eval.py`에서 예측 성능을 측정하는데에 사용됩니다.\(아래에 있는 [모델을 평가하기](index.md#evaluating-a-model)를 보세요\).
+`cifar10_train.py`는 주기적으로 모든 모델 파라미터를 [체크포인트 파일\(checkpoint files\)]()에 [저장]()합니다. 하지만 모델 자체를 평가하지는 _않습니다_. 체크포인트 파일은 `cifar10_eval.py`에서 예측 성능을 측정하는데에 사용됩니다.\(아래에 있는 [모델을 평가하기](index.md#evaluating-a-model)를 보세요\).
 
 이전 단계들을 모두 따라왔다면, 당신은 CIFAR-10 모델의 훈련을 시작한 것입니다! [축하합니다!](https://www.youtube.com/watch?v=9bZkp7q19f0)
 
@@ -166,13 +166,13 @@ Filling queue with 20000 CIFAR images before starting to train. This will take a
 * 경사\(gradients\), 활성화\(activations\), 그리고 가중치\(weights\)는 합당한지?
 * 현재의 학습 비울\(learning rate\)는 무엇인지?
 
-[TensorBoard](../../index-3/index-2.md) 는 기능적으로, `cifar10_train.py`의 [`SummaryWriter`](../../index-4/index-1/train.md#SummaryWriter)를 통해 주기적으로 데이터를 추출하여 표시합니다.
+[TensorBoard]() 는 기능적으로, `cifar10_train.py`의 [`SummaryWriter`]()를 통해 주기적으로 데이터를 추출하여 표시합니다.
 
 예를 들어, 우리는 훈련하는 동안 활성화\(activation\)의 분포와, `local3` feature들의 희박함\(sparsity\)의 분포가 어떻게 진화\(evolve\) 하는지 볼 수 있습니다:
 
  ![](../../.gitbook/assets/cifar_sparsity.png) ![](../../.gitbook/assets/cifar_activations.png)
 
-총 손실\(total loss\)뿐만 아니라, 개별적인 손실 함수\(loss function\) 들은 특히 시간 경과에 따라 흥미롭습니다. 그러나, 손실\(loss\)은 훈련에 사용되는 작은 배치 사이즈에 따라 상당히 많은 양의 노이즈를 나타냅니다. 이 연습에서 우리는 원본 값에 더하여 그들의 이동 평균을 시각화하는데 매우 유용함을 발견하였습니다. 이러한 목적을 위하여 어떻게 스크립트가 [`ExponentialMovingAverage`](../../index-4/index-1/train.md#ExponentialMovingAverage)를 사용하는지 보세요.
+총 손실\(total loss\)뿐만 아니라, 개별적인 손실 함수\(loss function\) 들은 특히 시간 경과에 따라 흥미롭습니다. 그러나, 손실\(loss\)은 훈련에 사용되는 작은 배치 사이즈에 따라 상당히 많은 양의 노이즈를 나타냅니다. 이 연습에서 우리는 원본 값에 더하여 그들의 이동 평균을 시각화하는데 매우 유용함을 발견하였습니다. 이러한 목적을 위하여 어떻게 스크립트가 [`ExponentialMovingAverage`]()를 사용하는지 보세요.
 
 ## 모델 평가하기
 
@@ -195,7 +195,7 @@ python cifar10_eval.py
 
 스크립트는 주기적으로 오직 정밀도@1\(precision@1\)을 리턴합니다 -- 이 경우에는 86%의 정확도를 리턴하였습니다. 또한 `cifar10_eval.py`는 TensorBoard에서 시각화를 해볼 수 있는 요약\(summaries\)을 내보냅니다. 이 요약들은 평가를 하는 동안 모델에 대한 추가적인 이해를 제공합니다.
 
-훈련 스크립트는 모든 학습된 변수의 [이동평균\(moving average\)](../../index-4/index-1/train.md#ExponentialMovingAverage) 버전을 계산합니다. 평가 스크립트는 모든 학습된 모델 파라미터를 이동 평균 버전으로 치환합니다. 이 치환은 평가시 모델 성능을 향상시킵니다.
+훈련 스크립트는 모든 학습된 변수의 [이동평균\(moving average\)]() 버전을 계산합니다. 평가 스크립트는 모든 학습된 모델 파라미터를 이동 평균 버전으로 치환합니다. 이 치환은 평가시 모델 성능을 향상시킵니다.
 
 > **연습:** 평균 파라미터를 사용하는 것은 예측 성능을 정밀도 @ 1\(precision @ 1\)에서 약 3%정도 향상시킬 수 있습니다. `cifar10_eval.py`를 수정하여 평균 파라미터를 사용하지 않도록 해보고 예측 성능이 떨어지는 것을 확인해보세요.
 
@@ -228,10 +228,10 @@ GPU들은 연산에 동기화되어있습니다. 모든 경사\(gradients\)를 G
 
 우리에게 필요한 첫번째 추상화는 단일 모델 복제본에 대한 추론\(inference\)과 경사\(gradients\)를 계산하기 위한 함수입니다. 코드에서 우리는 이 추상화를 "타워"라는 용어로 부릅니다. 우리는 각각의 타워에 두가지 속성을 설정해야 합니다:
 
-* 타워 안의 모든 연산들에 대한 유일한 이름. [`tf.name_scope()`](../../index-4/index-1/framework.md#name_scope)는 scope를 붙여 이런 유일한 이름을 제공합니다. 예를 들면, 첫번째 타워의 모든 연산들은 `tower_0`가 앞에 붙습니다. e.g. `tower_0/conv1/Conv2D`.
-* 타워 안의 연산을 실행할 선호하는 하드웨어 장치. [`tf.device()`](../../index-4/index-1/framework.md#device)는 이를 특정해줍니다. 예를 들면, 첫번째 타워의 모든 연산들은 `device('/gpu:0')` 스코프 안에 존재하게 됩니다. 이는 해당 연산들을 첫번째 GPU에서 실행하라는 것을 나타냅니다.
+* 타워 안의 모든 연산들에 대한 유일한 이름. [`tf.name_scope()`]()는 scope를 붙여 이런 유일한 이름을 제공합니다. 예를 들면, 첫번째 타워의 모든 연산들은 `tower_0`가 앞에 붙습니다. e.g. `tower_0/conv1/Conv2D`.
+* 타워 안의 연산을 실행할 선호하는 하드웨어 장치. [`tf.device()`]()는 이를 특정해줍니다. 예를 들면, 첫번째 타워의 모든 연산들은 `device('/gpu:0')` 스코프 안에 존재하게 됩니다. 이는 해당 연산들을 첫번째 GPU에서 실행하라는 것을 나타냅니다.
 
-모든 변수는 다중-GPU 버전에서 공유 되기 위하여 CPU에 고정되어있고, [`tf.get_variable()`](../../index-4/index-1/state_ops.md#get_variable)를 통하여 접근할 수 있습니다. 자세한 방법은 [변수 공유하기\(Sharing Variables\)](../../index-3/index-11.md)를 보세요.
+모든 변수는 다중-GPU 버전에서 공유 되기 위하여 CPU에 고정되어있고, [`tf.get_variable()`]()를 통하여 접근할 수 있습니다. 자세한 방법은 [변수 공유하기\(Sharing Variables\)]()를 보세요.
 
 ### 다수의 GPU 카드에서 모델을 실행하고 훈련하기
 

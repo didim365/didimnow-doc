@@ -57,7 +57,7 @@ wget https://storage.googleapis.com/download.tensorflow.org/models/inception_dec
 unzip tensorflow/examples/label_image/data/inception_dec_2015.zip -d tensorflow/examples/label_image/data/
 ```
 
-다음으로 그래프를 불러오고 실행할 수 있는 코드를 담고 있는 C++ 바이너리를 컴파일 해야 한다. 만약 [the instructions to download the source installation of TensorFlow](../../index-1/os_setup.md#installing-from-sources)에 나와 있는 지시사항을 자신의 플랫폼에 맞게 이행했다면, 터미널에서 다음과 같은 명령어를 실행하여 예제를 빌드할 수 있다:
+다음으로 그래프를 불러오고 실행할 수 있는 코드를 담고 있는 C++ 바이너리를 컴파일 해야 한다. 만약 [the instructions to download the source installation of TensorFlow]()에 나와 있는 지시사항을 자신의 플랫폼에 맞게 이행했다면, 터미널에서 다음과 같은 명령어를 실행하여 예제를 빌드할 수 있다:
 
 ```bash
 bazel build tensorflow/examples/label_image/...

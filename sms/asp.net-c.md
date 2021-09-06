@@ -186,8 +186,11 @@ private  string ParseCv(HttpPostedFile fileBase)
 {% endhint %}
 
 ### 6. 실행결과 화면입니다.
+>  정상적으로 메시지가 발송되었을 경우
 
 ![](../.gitbook/assets/aspnet_8.png)
+
+>  오류로 인하여 메시지를 발송하지 못했을 경우
 
 ![](../.gitbook/assets/aspnet_9.png)
 

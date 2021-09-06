@@ -172,10 +172,6 @@ private  string ParseCv(HttpPostedFile fileBase)
           &#xCD5C;&#xB300; 50kb gif,png,jpg &#xD30C;&#xC77C;&#xD615;&#xC2DD;</p>
       </td>
     </tr>
-    <tr>
-      <td style="text-align:center">&#xBC18;&#xD658; &#xAC12;</td>
-      <td style="text-align:left">&#xC131;&#xACF5; &#xC2DC;(OK), &#xC2E4;&#xD328; &#xC2DC;(&#xC5D0;&#xB7EC;&#xBA54;&#xC2DC;&#xC9C0;)</td>
-    </tr>
   </tbody>
 </table>
 

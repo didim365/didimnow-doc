@@ -16,6 +16,9 @@ description: ASP를 이용한 SMS 웹 서비스 이용방법을 안내합니다.
 
 ### 2. 편집기를 이용해 아래의 소스코드를 작성하여 SendSms.asp로 저장합니다. <a id="2"></a>
 
+> 계정 인증키는 \[계정관리 &gt; 호스팅 계정정보\]에서 확인 하실 수 있습니다.​
+
+
 ![](https://gblobscdn.gitbook.com/assets%2F-Mi_8LPPppX55FEwiSXr%2Fsync%2F66cdde2efe8e0c9368d075815e2cb8f45f6d850a.png?alt=media)
 
 ### 3. 아래 DpSms 웹 서비스URL을 입력하고 웹 참조 이름을 결정한 후 참조 추가 버튼을 누릅니다. <a id="3-dpsms-url"></a>

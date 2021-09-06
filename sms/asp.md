@@ -4,9 +4,9 @@ description: ASP를 이용한 SMS 웹 서비스 이용방법을 안내합니다.
 
 # ASP를 이용한 예제
 
-{% file src="../.gitbook/assets/sendsms\_sample\_asp.zip" caption="ASP를 이용한 예제소스 다운로드" %}
-
 ## ASP를 이용한 SMS 웹 서비스 이용방법 <a id="asp-net-vb-sms"></a>
+
+{% file src="../.gitbook/assets/sendsms\_sample\_asp.zip" caption="ASP를 이용한 예제소스 다운로드" %}
 
 ### 1. SMS발송 정보를 입력 받을 폼을 작성합니다. \(예제소스에 포함\) <a id="1-visual-studio-net"></a>
 

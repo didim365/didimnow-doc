@@ -78,9 +78,9 @@ Private Function ParseCv(ByVal fileBase As HttpPostedFile) As String
 End Function
 ```
 
-> ## **파라미터** ✅  <a id="undefined"></a>
+> ### **파라미터** ✅
 
-> ## **반환 값** ✅  <a id="undefined-1"></a>
+> ### **반환 값** ✅
 
 ## 6. 실행결과 화면입니다. <a id="6"></a>
 

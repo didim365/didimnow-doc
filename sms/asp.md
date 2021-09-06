@@ -6,9 +6,11 @@ description: ASP를 이용한 SMS 웹 서비스 이용방법을 안내합니다.
 
 {% file src="../.gitbook/assets/sendsms\_sample\_asp.zip" caption="ASP를 이용한 예제소스 다운로드" %}
 
-## ASP.NET\(VB\)를 이용한 SMS 웹 서비스 이용방법 <a id="asp-net-vb-sms"></a>
+## ASP를 이용한 SMS 웹 서비스 이용방법 <a id="asp-net-vb-sms"></a>
 
-### 1. Visual Studio.NET을 열어 새로운 프로젝트를 생성합니다. <a id="1-visual-studio-net"></a>
+### 1. SMS발송 정보를 입력 받을 폼을 작성합니다. \(예제소스에 포함\) <a id="1-visual-studio-net"></a>
+
+> DpSms 웹 참조 URL : [http://websvc.nesolution.com/sms/sms.asmx](http://websvc.nesolution.com/sms/sms.asmx)​
 
 ![](https://gblobscdn.gitbook.com/assets%2F-Mi_8LPPppX55FEwiSXr%2F-MitPJX_mmCk_GIeDrEz%2F-MitQ0wZ9Er7XyLmyJPm%2Faspnet_1.png?alt=media&token=f971ce82-ce83-44ad-b7ce-a149380e1752)
 
@@ -17,8 +19,6 @@ description: ASP를 이용한 SMS 웹 서비스 이용방법을 안내합니다.
 ![](https://gblobscdn.gitbook.com/assets%2F-Mi_8LPPppX55FEwiSXr%2Fsync%2F66cdde2efe8e0c9368d075815e2cb8f45f6d850a.png?alt=media)
 
 ### 3. 아래 DpSms 웹 서비스URL을 입력하고 웹 참조 이름을 결정한 후 참조 추가 버튼을 누릅니다. <a id="3-dpsms-url"></a>
-
-> DpSms 웹 참조 URL : [http://websvc.nesolution.com/sms/sms.asmx](http://websvc.nesolution.com/sms/sms.asmx)​
 
 ![](https://gblobscdn.gitbook.com/assets%2F-Mi_8LPPppX55FEwiSXr%2Fsync%2F4517d083a8d8548f9fda0307ccca85202476595c.png?alt=media)
 

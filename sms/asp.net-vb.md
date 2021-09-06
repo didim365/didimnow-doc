@@ -32,8 +32,50 @@ description: ASP.NET(VB)를 이용한 SMS 웹 서비스 이용방법을 안내�
 
 ### 5. 메시지 전송 버튼을 더블 클릭하여 btnSend\_Click 이벤트에 아래의 소스 코드를 삽입합니다.
 
-```text
-private void btnSend_Click(object sender, System.EventArgs e){    WebSvc_Sms.SMS oSms = new WebSvc_Sms.SMS();​    string stringBase64files =  string.Empty;    if (Request.Files != null)    {        for (int i = 0; i < Request.Files.Count; i++)        {            HttpPostedFile file = Request.Files[i];            stringBase64files += ParseCv(file) + ",";            }    }​    string sResult = oSms.SendSms(txtTranPhone.Text,                     txtTranCallback.Text,                     txtTranDate.Text,                          txtTranMsg.Text,                           txtGuestNo.Text,                            txtGuestAuthKey.Text,                  comType.SelectedValue,                txtSubject,                              stringBase64files);       lblResult.Text = sResult;}​private  string ParseCv(HttpPostedFile fileBase){    byte[] fileInBytes = new byte[fileBase.ContentLength];    using (BinaryReader theReader = new BinaryReader(fileBase.InputStream))    {        fileInBytes = theReader.ReadBytes(fileBase.ContentLength);    }    string fileAsString = Convert.ToBase64String(fileInBytes);​    return fileAsString;}
+```csharp
+Private Sub btnSend_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSend.Click
+    'DpSms 웹 서비스 개체 생성
+    Dim oSms As WebSvc_Sms.SMS
+    oSms = New WebSvc_Sms.SMS
+
+    ' 메시지 발송   메서드 호출
+    ' txtTranPhone          받는사람
+    ' txtTranCallback      보내는사람
+    ' txtTranDate            예약전송 일시
+    ' txtTranMsg            메시지
+    ' txtGuestNo            계정번호
+    ' txtGuestAuthKey    계정 인증키
+    ' stringBase64files   첨부파일 콤마로 구분 최대3개
+
+     Dim stringBase64files As String = String.Empty
+     If Request.Files IsNot Nothing Then
+         For i As Integer = 0 To Request.Files.Count - 1
+            Dim file As HttpPostedFile = Request.Files(i)
+            stringBase64files &= ParseCv(file) & ","
+         Next i
+     End If
+
+    Dim sResult As String
+    sResult = oSms.SendSms(txtTranPhone.Text, _
+                                        txtTranCallback.Text, _
+                                        txtTranDate.Text, _
+                                        txtTranMsg.Text, _
+                                        txtGuestNo.Text, _
+                                        txtGuestAuthKey.Text, _
+      comType.SelectedValue, txtSubject.Text, stringBase64files)
+
+    lblResult.Text = sResult
+End Sub
+
+Private Function ParseCv(ByVal fileBase As HttpPostedFile) As String
+
+  Dim fileInBytes(fileBase.ContentLength - 1) As Byte
+  Using theReader As New BinaryReader(fileBase.InputStream)
+       fileInBytes = theReader.ReadBytes(fileBase.ContentLength)
+  End Using
+  Dim fileAsString As String = Convert.ToBase64String(fileInBytes)
+     Return fileAsString
+End Function
 ```
 
 > ## **파라미터** ✅  <a id="undefined"></a>

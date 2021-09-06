@@ -83,9 +83,9 @@ End Function
 <table>
   <thead>
     <tr>
-      <th style="text-align:left"><b>&#xD30C;&#xB77C;&#xBBF8;&#xD130; </b>
+      <th style="text-align:left"><b>&#xD30C;&#xB77C;&#xBBF8;&#xD130;</b>
       </th>
-      <th style="text-align:left"><b>&#xC124;&#xBA85; </b>
+      <th style="text-align:left"><b>&#xC124;&#xBA85;</b>
       </th>
     </tr>
   </thead>
@@ -181,13 +181,15 @@ End Function
 {% endhint %}
 
 {% hint style="danger" %}
-**실패 시    "Exception: 에러메시지"**
+**실패 시 "Exception: 에러메시지"**
 {% endhint %}
 
 ## 6. 실행결과 화면입니다. <a id="6"></a>
+
 > 정상적으로 메시지가 발송되었을 경우
 
 ![](https://gblobscdn.gitbook.com/assets%2F-Mi_8LPPppX55FEwiSXr%2F-MitjzRZvtLoYKG1sP4Z%2F-MitkuNWdiRRkQoDnWrV%2Faspnet_8.png?alt=media&token=86418e41-759c-4c63-856a-4843f26b554b)
+
 > 오류로 인하여 메시지를 발송하지 못했을 경우
 
 ![](https://gblobscdn.gitbook.com/assets%2F-Mi_8LPPppX55FEwiSXr%2F-MitjzRZvtLoYKG1sP4Z%2F-MitkuNXMMyJJ4oWr20t%2Faspnet_9.png?alt=media&token=ba1fbb17-ff42-4c12-bb6f-e21a9dc04729)

@@ -10,27 +10,27 @@ description: 'ASP.NET(C#)를 이용한 SMS 웹 서비스 이용방법을 안내�
 
 ### 1. Visual Studio.NET을 열어 새로운 프로젝트를 생성합니다.
 
-![](../.gitbook/assets/aspnet_1.png)
+![](../.gitbook/assets/asp_vb_1%20%282%29.png)
 
 ![](../.gitbook/assets/aspnet_2.png)
 
 ### 2. 솔루션 탐색기에서 마우스 오른쪽을 클릭하여 웹 참조 메뉴를 선택합니다.
 
-![](../.gitbook/assets/aspnet_3.png)
+![](../.gitbook/assets/asp_vb_2.png)
 
 ### 3. 아래 DpSms 웹 서비스URL을 입력하고 웹 참조 이름을 결정한 후 참조 추가 버튼을 누릅니다.
 
 > SMS 웹 참조 URL : [http://websvc.nesolution.com/sms/sms.asmx](http://websvc.nesolution.com/sms/sms.asmx)
 
-![](../.gitbook/assets/aspnet_4.png)
+![](../.gitbook/assets/asp_vb_3.png)
 
-![](../.gitbook/assets/aspnet_5.png)
+![](../.gitbook/assets/asp_vb_4%20%281%29.png)
 
-![](../.gitbook/assets/aspnet_6.png)
+![](../.gitbook/assets/asp_vb_5.png)
 
 ### 4. 아래와 같이 SMS발송 정보를 입력 받을 폼을 작성합니다. \(예제소스에 포함\)
 
-![](../.gitbook/assets/aspnet_7.png)
+![](../.gitbook/assets/asp_vb_6.png)
 
 ### 5. 메시지 전송 버튼을 더블 클릭하여 btnSend\_Click 이벤트에 아래의 소스 코드를 삽입합니다.
 
@@ -84,15 +84,15 @@ private  string ParseCv(HttpPostedFile fileBase)
 <table>
   <thead>
     <tr>
-      <th style="text-align:center"><b>&#xD30C;&#xB77C;&#xBBF8;&#xD130; </b>
+      <th style="text-align:left"><b>&#xD30C;&#xB77C;&#xBBF8;&#xD130;</b>
       </th>
-      <th style="text-align:left"><b>&#xC124;&#xBA85; </b>
+      <th style="text-align:left"><b>&#xC124;&#xBA85;</b>
       </th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td style="text-align:center">stran_phone</td>
+      <td style="text-align:left">stran_phone</td>
       <td style="text-align:left">
         <p>&#xC218;&#xC2E0;&#xC790; &#xC804;&#xD654;&#xBC88;&#xD638;(&#xC0DD;&#xB7B5;&#xBD88;&#xAC00;),
           &#xC5EC;&#xB7EC;&#xBC88;&#xD638;&#xC77C; &#xACBD;&#xC6B0;&#xC5D0;&#xB294;
@@ -102,11 +102,11 @@ private  string ParseCv(HttpPostedFile fileBase)
       </td>
     </tr>
     <tr>
-      <td style="text-align:center">stran_callback</td>
+      <td style="text-align:left">stran_callback</td>
       <td style="text-align:left">&#xC1A1;&#xC2E0;&#xC790; &#xC804;&#xD654;&#xBC88;&#xD638;(&#xC0DD;&#xB7B5;&#xBD88;&#xAC00;)</td>
     </tr>
     <tr>
-      <td style="text-align:center">stran_date</td>
+      <td style="text-align:left">stran_date</td>
       <td style="text-align:left">
         <p>&#xC608;&#xC57D; &#xC804;&#xC1A1;&#xC2DC;&#xC5D0;&#xB9CC; &#xC0AC;&#xC6A9;,
           &#xD3EC;&#xB9F7;&#xC740; &#xC2DC;&#xBD84;&#xAE4C;&#xC9C0; &#xD3EC;&#xD568;&#xB41C;
@@ -116,7 +116,7 @@ private  string ParseCv(HttpPostedFile fileBase)
       </td>
     </tr>
     <tr>
-      <td style="text-align:center">stran_msg</td>
+      <td style="text-align:left">stran_msg</td>
       <td style="text-align:left">
         <p>&#xC804;&#xC1A1; &#xBA54;&#xC2DC;&#xC9C0;(&#xC0DD;&#xB7B5;&#xBD88;&#xAC00;).</p>
         <p>SMS : &#xCD5C;&#xB300; 80byte (&#xC6A9;&#xB7C9;&#xC774; &#xB118;&#xC73C;&#xBA74;
@@ -125,11 +125,11 @@ private  string ParseCv(HttpPostedFile fileBase)
       </td>
     </tr>
     <tr>
-      <td style="text-align:center">guest_no</td>
+      <td style="text-align:left">guest_no</td>
       <td style="text-align:left">&#xACC4;&#xC815;&#xBC88;&#xD638;(&#xC608;.000001)</td>
     </tr>
     <tr>
-      <td style="text-align:center">guest_key</td>
+      <td style="text-align:left">guest_key</td>
       <td style="text-align:left">
         <p>&#xAD00;&#xB9AC;&#xC790; &#xACC4;&#xC815;&#xACFC; &#xC554;&#xD638;&#xB97C;
           &#xC774;&#xC6A9;&#xD574; &#xC0DD;&#xC131;&#xD55C; &#xACC4;&#xC815; &#xC778;&#xC99D;
@@ -139,7 +139,7 @@ private  string ParseCv(HttpPostedFile fileBase)
       </td>
     </tr>
     <tr>
-      <td style="text-align:center">type</td>
+      <td style="text-align:left">type</td>
       <td style="text-align:left">
         <p>&#xBA54;&#xC2DC;&#xC9C0; &#xC804;&#xC1A1; &#xD0C0;&#xC785;. &quot;SMS&quot;
           / &quot;LMS&quot; / &quot;MMS&quot; / &quot;AUTO&quot; &#xC911;&#xC5D0;&#xC11C;
@@ -154,7 +154,7 @@ private  string ParseCv(HttpPostedFile fileBase)
       </td>
     </tr>
     <tr>
-      <td style="text-align:center">subject</td>
+      <td style="text-align:left">subject</td>
       <td style="text-align:left">
         <p>LMS/MMS &#xBA54;&#xC2DC;&#xC9C0;&#xC758; &#xBA54;&#xC2DC;&#xC9C0; &#xC81C;&#xBAA9;.</p>
         <p>LMS/MMS &#xBC29;&#xC2DD;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xACBD;&#xC6B0;
@@ -162,7 +162,7 @@ private  string ParseCv(HttpPostedFile fileBase)
       </td>
     </tr>
     <tr>
-      <td style="text-align:center">files</td>
+      <td style="text-align:left">files</td>
       <td style="text-align:left">
         <p>MMS &#xCCA8;&#xBD80; &#xC774;&#xBBF8;&#xC9C0; &#xD30C;&#xC77C;&#xBA85;.</p>
         <p>&#xCCA8;&#xBD80; &#xD30C;&#xC77C;&#xC774; 2&#xAC1C; &#xC774;&#xC0C1;&#xC778;
@@ -182,17 +182,18 @@ private  string ParseCv(HttpPostedFile fileBase)
 {% endhint %}
 
 {% hint style="danger" %}
-**실패 시    "Exception: 에러메시지"**
+**실패 시 "Exception: 에러메시지"**
 {% endhint %}
 
 ### 6. 실행결과 화면입니다.
->  정상적으로 메시지가 발송되었을 경우
 
-![](../.gitbook/assets/aspnet_8.png)
+> 정상적으로 메시지가 발송되었을 경우
 
->  오류로 인하여 메시지를 발송하지 못했을 경우
+![](../.gitbook/assets/asp_vb_7%20%281%29.png)
 
-![](../.gitbook/assets/aspnet_9.png)
+> 오류로 인하여 메시지를 발송하지 못했을 경우
 
-![](../.gitbook/assets/aspnet_10.png)
+![](../.gitbook/assets/asp_vb_8%20%281%29.png)
+
+![](../.gitbook/assets/asp_vb_9%20%282%29.png)
 

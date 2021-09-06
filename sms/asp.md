@@ -155,21 +155,117 @@ end function
 
 > ### **파라미터** ✔ <a id="undefined"></a>
 
-
-
-
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:left"><b>&#xD30C;&#xB77C;&#xBBF8;&#xD130;</b>
+      </th>
+      <th style="text-align:left"><b>&#xC124;&#xBA85;</b>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:left">stran_phone</td>
+      <td style="text-align:left">
+        <p>&#xC218;&#xC2E0;&#xC790; &#xC804;&#xD654;&#xBC88;&#xD638;(&#xC0DD;&#xB7B5;&#xBD88;&#xAC00;),
+          &#xC5EC;&#xB7EC;&#xBC88;&#xD638;&#xC77C; &#xACBD;&#xC6B0;&#xC5D0;&#xB294;
+          ;&#xC73C;&#xB85C; &#xAD6C;&#xBD84;.</p>
+        <p>&#xC804;&#xD654;&#xBC88;&#xD638; &#xAD6C;&#xBD84;&#xC790; &#xB300;&#xC26C;(-)&#xB294;
+          &#xC788;&#xAC70;&#xB098; &#xC5C6;&#xAC70;&#xB098; &#xC0C1;&#xAD00;&#xC5C6;&#xC74C;</p>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left">stran_callback</td>
+      <td style="text-align:left">&#xC1A1;&#xC2E0;&#xC790; &#xC804;&#xD654;&#xBC88;&#xD638;(&#xC0DD;&#xB7B5;&#xBD88;&#xAC00;)</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">stran_date</td>
+      <td style="text-align:left">
+        <p>&#xC608;&#xC57D; &#xC804;&#xC1A1;&#xC2DC;&#xC5D0;&#xB9CC; &#xC0AC;&#xC6A9;,
+          &#xD3EC;&#xB9F7;&#xC740; &#xC2DC;&#xBD84;&#xAE4C;&#xC9C0; &#xD3EC;&#xD568;&#xB41C;
+          &#xB0A0;&#xC9DC; &#xD3EC;&#xB9F7;.</p>
+        <p>&#xC0DD;&#xB7B5;&#xC2DC;&#xC5D0;&#xB294; &#xC989;&#xC2DC; &#xC804;&#xC1A1;(&#xC608;.2003-01-01
+          13:01)</p>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left">stran_msg</td>
+      <td style="text-align:left">
+        <p>&#xC804;&#xC1A1; &#xBA54;&#xC2DC;&#xC9C0;(&#xC0DD;&#xB7B5;&#xBD88;&#xAC00;).</p>
+        <p>SMS : &#xCD5C;&#xB300; 80byte (&#xC6A9;&#xB7C9;&#xC774; &#xB118;&#xC73C;&#xBA74;
+          &#xC9E4;&#xB824;&#xC11C; &#xC804;&#xC1A1;)</p>
+        <p>LMS/MMS : &#xCD5C;&#xB300; 2,000byte</p>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left">guest_no</td>
+      <td style="text-align:left">&#xACC4;&#xC815;&#xBC88;&#xD638;(&#xC608;.000001)</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">guest_key</td>
+      <td style="text-align:left">
+        <p>&#xAD00;&#xB9AC;&#xC790; &#xACC4;&#xC815;&#xACFC; &#xC554;&#xD638;&#xB97C;
+          &#xC774;&#xC6A9;&#xD574; &#xC0DD;&#xC131;&#xD55C; &#xACC4;&#xC815; &#xC778;&#xC99D;
+          &#xD0A4;</p>
+        <p>(&#xD68C;&#xC6D0;&#xC804;&#xC6A9; &#xC0AC;&#xC774;&#xD2B8;&#xC5D0;&#xC11C;
+          &#xD655;&#xC778; &#xAC00;&#xB2A5;)</p>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left">type</td>
+      <td style="text-align:left">
+        <p>&#xBA54;&#xC2DC;&#xC9C0; &#xC804;&#xC1A1; &#xD0C0;&#xC785;. &quot;SMS&quot;
+          / &quot;LMS&quot; / &quot;MMS&quot; / &quot;AUTO&quot; &#xC911;&#xC5D0;&#xC11C;
+          &#xC120;&#xD0DD;.</p>
+        <p>LMS/MMS &#xC0AC;&#xC6A9; &#xC2DC; &#xC11C;&#xBE44;&#xC2A4; &#xC2E0;&#xCCAD;&#xC774;
+          &#xB418;&#xC5B4; &#xC788;&#xC5B4;&#xC57C; &#xD568;</p>
+        <p>&#xBE48; &#xAC12;&#xC744; &#xB118;&#xAE30;&#xBA74; &quot;SMS&quot;&#xD615;&#xC2DD;&#xC73C;&#xB85C;
+          &#xBC1C;&#xC1A1;</p>
+        <p>&quot;AUTO&quot;&#xB294; &#xBA54;&#xC2DC;&#xC9C0;&#xC758; &#xAE38;&#xC774;&#xB97C;
+          &#xCCB4;&#xD06C;&#xD558;&#xC5EC; 80byte&#xB97C; &#xCD08;&#xACFC; &#xC2DC;
+          &#xC790;&#xB3D9;&#xC73C;&#xB85C; LMS&#xB85C; &#xBC1C;&#xC1A1;</p>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left">subject</td>
+      <td style="text-align:left">
+        <p>LMS/MMS &#xBA54;&#xC2DC;&#xC9C0;&#xC758; &#xBA54;&#xC2DC;&#xC9C0; &#xC81C;&#xBAA9;.</p>
+        <p>LMS/MMS &#xBC29;&#xC2DD;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xACBD;&#xC6B0;
+          &#xD544;&#xC218;.</p>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left">files</td>
+      <td style="text-align:left">
+        <p>MMS &#xCCA8;&#xBD80; &#xC774;&#xBBF8;&#xC9C0; &#xD30C;&#xC77C;&#xBA85;.</p>
+        <p>&#xCCA8;&#xBD80; &#xD30C;&#xC77C;&#xC774; 2&#xAC1C; &#xC774;&#xC0C1;&#xC778;
+          &#xACBD;&#xC6B0; &#xCEF4;&#xB9C8;(,)&#xB85C; &#xAD6C;&#xBD84;</p>
+        <p>MMS&#xC758; &#xACBD;&#xC6B0; &#xD544;&#xC218;</p>
+        <p>&#xCD5C;&#xB300; 3&#xAC1C; &#xAE4C;&#xC9C0; &#xC9C0;&#xC815; &#xAC00;&#xB2A5;,
+          &#xCD5C;&#xB300; 50kb gif,png,jpg &#xD30C;&#xC77C;&#xD615;&#xC2DD;</p>
+      </td>
+    </tr>
+  </tbody>
+</table>
 
 > ### **반환 값** ✔ <a id="undefined-1"></a>
+
+{% hint style="success" %}
+#### 성공 시    "OK"
+{% endhint %}
+
+{% hint style="danger" %}
+**실패 시   "Exception: 에러메시지"**
+{% endhint %}
 
 ## 6. 실행결과 화면입니다. <a id="6"></a>
 
 > 정상적으로 메시지가 발송되었을 경우
 
-![](https://gblobscdn.gitbook.com/assets%2F-Mi_8LPPppX55FEwiSXr%2F-MitjzRZvtLoYKG1sP4Z%2F-MitkuNWdiRRkQoDnWrV%2Faspnet_8.png?alt=media&token=86418e41-759c-4c63-856a-4843f26b554b)
+![](../.gitbook/assets/asp_2.png)
 
 > 오류로 인하여 메시지를 발송하지 못했을 경우
 
-![](https://gblobscdn.gitbook.com/assets%2F-Mi_8LPPppX55FEwiSXr%2F-MitjzRZvtLoYKG1sP4Z%2F-MitkuNXMMyJJ4oWr20t%2Faspnet_9.png?alt=media&token=ba1fbb17-ff42-4c12-bb6f-e21a9dc04729)
-
-![](https://gblobscdn.gitbook.com/assets%2F-Mi_8LPPppX55FEwiSXr%2F-MitjzRZvtLoYKG1sP4Z%2F-MitkuNYhpaUzYrDQ2nf%2Faspnet_10.png?alt=media&token=a4aa77e4-bf0f-4081-aaeb-60dc11c2ae24)
+![](../.gitbook/assets/asp_3.png)
 

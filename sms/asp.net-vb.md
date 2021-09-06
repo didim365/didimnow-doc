@@ -6,6 +6,8 @@ description: ASP.NET(VB)를 이용한 SMS 웹 서비스 이용방법을 안내�
 
 ## ASP.NET\(VB\)를 이용한 SMS 웹 서비스 이용방법
 
+{% file src="../.gitbook/assets/sendsms\_sample\_vb\_aspnet.zip" caption="ASP.NET\(VB\)를 이용한 예제소스 다운로드" %}
+
 ## 1. Visual Studio.NET을 열어 새로운 프로젝트를 생성합니다. <a id="1-visual-studio-net"></a>
 
 ![](https://gblobscdn.gitbook.com/assets%2F-Mi_8LPPppX55FEwiSXr%2F-MitPJX_mmCk_GIeDrEz%2F-MitQ0wZ9Er7XyLmyJPm%2Faspnet_1.png?alt=media&token=f971ce82-ce83-44ad-b7ce-a149380e1752)

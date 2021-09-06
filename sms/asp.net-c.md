@@ -181,13 +181,29 @@ private  string ParseCv(HttpPostedFile fileBase)
 
 > ### **반환 값** ✅
 
-{% hint style="success" %}
-#### 성공 시    "OK"
-{% endhint %}
-
-{% hint style="danger" %}
-**실패 시    "Exception: 에러메시지"**
-{% endhint %}
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:center"><b>&#xACB0;&#xACFC;&#xAD6C;&#xBD84; </b>
+      </th>
+      <th style="text-align:center"><b>&#xBC18;&#xD658;&#xAC12; </b>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:center">&#xC131;&#xACF5; &#xC2DC; &#x2714;</td>
+      <td style="text-align:center">OK</td>
+    </tr>
+    <tr>
+      <td style="text-align:center">&#xC2E4;&#xD328; &#xC2DC; &#x274C;</td>
+      <td style="text-align:center">
+        <p>Exception</p>
+        <p>:&#xC5D0;&#xB7EC;&#xBA54;&#xC2DC;&#xC9C0;</p>
+      </td>
+    </tr>
+  </tbody>
+</table>
 
 ### 6. 실행결과 화면입니다.
 

@@ -207,3 +207,9 @@ private  string ParseCv(HttpPostedFile fileBase)
 
 ### 6. 실행결과 화면입니다.
 
+![](../.gitbook/assets/aspnet_8.png)
+
+![](../.gitbook/assets/aspnet_9.png)
+
+![](../.gitbook/assets/aspnet_10.png)
+

@@ -14,8 +14,8 @@ description: 'ASP.NET(C#)를 이용한 SMS 웹 서비스 이용방법을 안내�
 
 ![](../.gitbook/assets/aspnet_2.png)
 
-### <span style="color:red">붉은 색</span>2. 솔루션 탐색기에서 마우스 오른쪽을 클릭하여 웹 참조 메뉴를 선택합니다.
-
+### 2. 솔루션 탐색기에서 마우스 오른쪽을 클릭하여 웹 참조 메뉴를 선택합니다.
+<span style="color:red">붉은 색</span>
 ![](../.gitbook/assets/aspnet_1.png)
 
 ![](../.gitbook/assets/aspnet_2.png)

@@ -79,7 +79,7 @@ private  string ParseCv(HttpPostedFile fileBase)
 }
 ```
 
-### \* 파라미
+> 파라미터
 
 <table>
   <thead>
@@ -179,5 +179,7 @@ private  string ParseCv(HttpPostedFile fileBase)
   </tbody>
 </table>
 
-### \* 반환
+> 반환 값
+
+
 

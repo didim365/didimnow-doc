@@ -16,7 +16,7 @@ description: ASP를 이용한 SMS 웹 서비스 이용방법을 안내합니다.
 
 ### 2. 편집기를 이용해 아래의 소스코드를 작성하여 SendSms.asp로 저장합니다. <a id="2"></a>
 
-> 하단의 예제는 MSXML 6.0을 사용합니다.                                                   [MSXML 6.0 다운로드로](https://www.microsoft.com/ko-kr/download/search.aspx?q=MSXML)
+> 하단의 예제는 MSXML 6.0을 사용합니다.                                                   [MSXML 6.0 다운로드](https://www.microsoft.com/ko-kr/download/search.aspx?q=MSXML)
 
 ![](https://gblobscdn.gitbook.com/assets%2F-Mi_8LPPppX55FEwiSXr%2Fsync%2F66cdde2efe8e0c9368d075815e2cb8f45f6d850a.png?alt=media)
 

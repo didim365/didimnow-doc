@@ -1,3 +1,7 @@
+---
+description: ASP.NET(VB)를 이용한 SMS 웹 서비스 이용방법을 안내합니다.
+---
+
 # ASP.NET\(VB\)을 이용한 예제
 
 ## ASP.NET\(VB\)를 이용한 SMS 웹 서비스 이용방법

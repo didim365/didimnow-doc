@@ -18,28 +18,147 @@ description: ASP를 이용한 SMS 웹 서비스 이용방법을 안내합니다.
 
 > 하단의 예제는 MSXML 6.0을 사용합니다.                                                   [MSXML 6.0 다운로드](https://www.microsoft.com/ko-kr/download/search.aspx?q=MSXML)
 
-![](https://gblobscdn.gitbook.com/assets%2F-Mi_8LPPppX55FEwiSXr%2Fsync%2F66cdde2efe8e0c9368d075815e2cb8f45f6d850a.png?alt=media)
+```markup
+<%
+'받는사람 핸드폰 번호
+sTranPhone = Request("txtTranPhone")
 
-### 3. 아래 DpSms 웹 서비스URL을 입력하고 웹 참조 이름을 결정한 후 참조 추가 버튼을 누릅니다. <a id="3-dpsms-url"></a>
+'보내는사람 핸드폰 번호
+sTranCallback = Request("txtTranCallback")
 
-![](https://gblobscdn.gitbook.com/assets%2F-Mi_8LPPppX55FEwiSXr%2Fsync%2F4517d083a8d8548f9fda0307ccca85202476595c.png?alt=media)
+'예약전송 일시(생략시 즉시전송)
+sTranDate = Request("txtTranDate")
 
-![](https://gblobscdn.gitbook.com/assets%2F-Mi_8LPPppX55FEwiSXr%2F-MitoNE6xKzssr5Wb6cr%2F-MitwdcIisH9mclwajmP%2Fasp_vb_4.png?alt=media&token=6949d097-c82d-4ea0-b54b-bb8519a3242e)
+'전송 메시지
+sTranMsg = Request("txtTranMsg")
 
-![](https://gblobscdn.gitbook.com/assets%2F-Mi_8LPPppX55FEwiSXr%2Fsync%2F51d879f67585608d54341494d31f8647e8cf9ccd.png?alt=media)
+'계정번호
+sGuestNo = Request("txtGuestNo")
 
-### 4. 아래와 같이 SMS발송 정보를 입력 받을 폼을 작성합니다. \(예제소스에 포함\) <a id="4-sms"></a>
+'계정 인증키
+sGuestAuthKey = Request("txtGuestAuthKey")
 
-![](https://gblobscdn.gitbook.com/assets%2F-Mi_8LPPppX55FEwiSXr%2Fsync%2F51aedfcb9a0bc76de049861307aac8852024862b.png?alt=media)
+'발송구분 (SMS/LMS/MMS)
+sType = Request("comType")
 
-### 5. 메시지 전송 버튼을 더블 클릭하여 btnSend\_Click 이벤트에 아래의 소스 코드를 삽입합니다. <a id="5-btnsend_click"></a>
+'LMS/MMS일 경우 제목
+sSubject = Request("txtSubject")
 
-```text
-Private Sub btnSend_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSend.Click    'DpSms 웹 서비스 개체 생성    Dim oSms As WebSvc_Sms.SMS    oSms = New WebSvc_Sms.SMS​    ' 메시지 발송   메서드 호출    ' txtTranPhone          받는사람    ' txtTranCallback      보내는사람    ' txtTranDate            예약전송 일시    ' txtTranMsg            메시지    ' txtGuestNo            계정번호    ' txtGuestAuthKey    계정 인증키    ' stringBase64files   첨부파일 콤마로 구분 최대3개​     Dim stringBase64files As String = String.Empty     If Request.Files IsNot Nothing Then         For i As Integer = 0 To Request.Files.Count - 1            Dim file As HttpPostedFile = Request.Files(i)            stringBase64files &= ParseCv(file) & ","         Next i     End If​    Dim sResult As String    sResult = oSms.SendSms(txtTranPhone.Text, _                                        txtTranCallback.Text, _                                        txtTranDate.Text, _                                        txtTranMsg.Text, _                                        txtGuestNo.Text, _                                        txtGuestAuthKey.Text, _      comType.SelectedValue, txtSubject.Text, stringBase64files)​    lblResult.Text = sResultEnd Sub​Private Function ParseCv(ByVal fileBase As HttpPostedFile) As String​  Dim fileInBytes(fileBase.ContentLength - 1) As Byte  Using theReader As New BinaryReader(fileBase.InputStream)       fileInBytes = theReader.ReadBytes(fileBase.ContentLength)  End Using  Dim fileAsString As String = Convert.ToBase64String(fileInBytes)     Return fileAsStringEnd Function
+ '*======================================================================*\
+ ' MMS일 경우 첨부파일 처리
+ ' 서버&로컬 에 저장된 이미지 파일 읽어올때.
+ ' 웹경로,로컬경로 모두 가능 합니다.
+'\*======================================================================*/
+
+'웹경로
+'imgPath = "http://websvc.nesolution.com/sms/MMSAttachFiles/M050085/20180510145947.jpg"
+'로컬경로
+imgPath ="d:\img\test.jpg"
+
+ '"," 콤마로 구분 최대 3개 첨부 가능 합니다.
+stringBase64files = GetStringBase64files(imgPath)&_
+   ","&GetStringBase64files(imgPath)&","&GetStringBase64files(imgPath)
+
+
+Function GetStringBase64files(imgPath)
+    imgPath = LCase(imgPath)
+
+    if LEFT(imgPath,4) ="http" THEN
+         Set Http= CreateObject("MSXML2.ServerXMLHTTP")
+          Http.Open "GET", imgPath, false
+          Http.Send()
+          binData = Http.ResponseBody
+          GetStringBase64files = Base64encode(binData)
+        Set Http = Nothing
+    ELSE
+          Dim inputStream
+          Set inputStream = CreateObject("ADODB.Stream")
+          inputStream.Open
+          inputStream.Type = 1  ' adTypeBinary
+          inputStream.LoadFromFile imgPath
+          Dim bytes: bytes = inputStream.Read
+         GetStringBase64files =Base64Encode(bytes)
+    END IF
+End Function
+
+Function Base64Encode(sText)
+    Dim oXML, oNode
+    Set oXML = CreateObject("Msxml2.DOMDocument.3.0")
+    Set oNode = oXML.CreateElement("base64")
+    oNode.dataType = "bin.base64"
+    oNode.nodeTypedValue = sText
+    Base64Encode = oNode.text
+    Set oNode = Nothing
+    Set oXML = Nothing
+End Function
+
+'*======================================================================*\
+' MMS일 경우 첨부파일 처리
+ '프론트에서 이미지 파일을 base64로 생성후 post로 받아 올때.
+'\*======================================================================*/
+'첨부파일
+'stringBase64files = Request("Base64files")
+'stringBase64files = Replace(stringBase64files,"\t","+")
+
+
+sParam = "cmd=SendSms"
+sParam = sParam + "&guest_no=" + sGuestNo
+sParam = sParam + "&guest_key=" + sGuestAuthKey
+sParam = sParam + "&tran_phone=" + sTranPhone
+sParam = sParam + "&tran_callback=" + sTranCallback
+sParam = sParam + "&tran_date=" + sTranDate
+sParam = sParam + "&tran_msg=" + Server.URLEncode(sTranMsg)
+sParam = sParam + "&type=" + sType
+
+If sType = "LMS" Or sType = "MMS" Then
+    sParam = sParam + "&subject=" + Server.URLEncode(sSubject)	'제목
+End IF
+
+If sType = "MMS" Then
+    sParam = sParam + "&files=" + Server.URLEncode(stringBase64files)	'파일
+End IF
+
+sResponse = SendPOST("http://websvc.nesolution.com/SMS/SMS.aspx", sParam)
+
+function SendPOST(parm_url, parm_post)
+    Set xmlHttp = Server.Createobject("MSXML2.ServerXMLHTTP.6.0")
+    xmlHttp.Open "POST", parm_url, False
+    xmlHttp.setRequestHeader "User-Agent", "asp httprequest"
+    xmlHttp.setRequestHeader "content-type", "application/x-www-form-urlencoded"
+    xmlHttp.Send parm_post
+    SendPOST = xmlHttp.responseText
+    xmlHttp.abort()
+    set xmlHttp = Nothing
+end function
+
+%>
+
+<HTML>
+<HEAD>
+    <TITLE>New Document</TITLE>
+    <meta http-equiv="Content-Type" content="text/html; charset=ks_c_5601-1987">
+    <style type="text/css">
+    <!--
+      .unnamed1 { font-family:"굴림"; font-size:9pt; line-height:12pt}
+    //-->
+    </style>
+</HEAD>
+<BODY>
+    <div align="center">
+      <h2>SMS 예제소스(asp)</h2>
+      <br>
+      <span class="unnamed1">전송결과 : <b><%=sResponse%></b></span>
+    </div>
+</BODY>
+</HTML>
 ```
 
 > ### **파라미터** ✔ <a id="undefined"></a>
->
+
+
+
+
+
 > ### **반환 값** ✔ <a id="undefined-1"></a>
 
 ## 6. 실행결과 화면입니다. <a id="6"></a>

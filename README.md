@@ -8,7 +8,7 @@ description: Didim365에서 제공하는 다양한 상품을 보다 쉽고 빠�
 
 궁금한 점이 있으세요? 각 분야 별 전문가들이 빠르게 도와드리겠습니다.
 
-### Didim365
+### ![](.gitbook/assets/body_partner_join_mail_logo.gif)
 
 > 디딤나우 포 파트너 문의하기
 

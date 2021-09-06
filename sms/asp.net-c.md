@@ -182,7 +182,7 @@ private  string ParseCv(HttpPostedFile fileBase)
 {% endhint %}
 
 {% hint style="danger" %}
-**실패 시 "Exception: 에러메시지"**
+**실패 시   "Exception: 에러메시지"**
 {% endhint %}
 
 ### 6. 실행결과 화면입니다.

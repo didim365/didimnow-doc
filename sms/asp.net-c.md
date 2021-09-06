@@ -79,7 +79,7 @@ private  string ParseCv(HttpPostedFile fileBase)
 }
 ```
 
-> 파라미터
+> ### **파라미터**
 
 <table>
   <thead>
@@ -147,18 +147,16 @@ private  string ParseCv(HttpPostedFile fileBase)
         <p>&#xBE48; &#xAC12;&#xC744; &#xB118;&#xAE30;&#xBA74; &quot;SMS&quot;&#xD615;&#xC2DD;&#xC73C;&#xB85C;
           &#xBC1C;&#xC1A1;</p>
         <p>&quot;AUTO&quot;&#xB294; &#xBA54;&#xC2DC;&#xC9C0;&#xC758; &#xAE38;&#xC774;&#xB97C;
-          &#xCCB4;&#xD06C;&#xD558;&#xC5EC; 80byte&#xB97C; &#xCD08;&#xACFC;&#xC2DC;
-          &#xC790;&#xB3D9;&#xC73C;&#xB85C; LMS&#xB85C; &#xBC1C;</p>
-        <p>&#xC790;&#xB3D9;&#xC73C;&#xB85C; LMS&#xB85C; &#xBC1C;&#xC1A1;&#xC774;
-          &#xB429;&#xB2C8;&#xB2E4;.</p>
+          &#xCCB4;&#xD06C;&#xD558;&#xC5EC; 80byte&#xB97C; &#xCD08;&#xACFC; &#xC2DC;
+          &#xC790;&#xB3D9;&#xC73C;&#xB85C; LMS&#xB85C; &#xBC1C;&#xC1A1;</p>
       </td>
     </tr>
     <tr>
       <td style="text-align:left">subject</td>
       <td style="text-align:left">
         <p>LMS/MMS &#xBA54;&#xC2DC;&#xC9C0;&#xC758; &#xBA54;&#xC2DC;&#xC9C0; &#xC81C;&#xBAA9;.</p>
-        <p>LMS/MMS &#xBC29;&#xC2DD;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xC2DC;&#xB294;
-          &#xACBD;&#xC6B0; &#xD544;&#xC218; &#xC785;&#xB2C8;&#xB2E4;.</p>
+        <p>LMS/MMS &#xBC29;&#xC2DD;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xACBD;&#xC6B0;
+          &#xD544;&#xC218;.</p>
       </td>
     </tr>
     <tr>
@@ -166,20 +164,20 @@ private  string ParseCv(HttpPostedFile fileBase)
       <td style="text-align:left">
         <p>MMS &#xCCA8;&#xBD80; &#xC774;&#xBBF8;&#xC9C0; &#xD30C;&#xC77C;&#xBA85;.</p>
         <p>&#xCCA8;&#xBD80; &#xD30C;&#xC77C;&#xC774; 2&#xAC1C; &#xC774;&#xC0C1;&#xC778;
-          &#xACBD;&#xC6B0; &#xCEF4;&#xB9C8;(,)&#xB85C; &#xAD6C;&#xBD84; &#xD569;&#xB2C8;&#xB2E4;.</p>
-        <p>MMS&#xC758; &#xACBD;&#xC6B0; &#xD544;&#xC218;&#xC774;&#xACE0; &#xCD5C;&#xB300;
-          3&#xAC1C; &#xAE4C;&#xC9C0; &#xC9C0;&#xC815;&#xC774; &#xAC00;&#xB2A5; &#xD569;&#xB2C8;&#xB2E4;.</p>
-        <p>&#xCD5C;&#xB300; 50kb gif,png,jpg &#xD30C;&#xC77C;&#xD615;&#xC2DD;</p>
+          &#xACBD;&#xC6B0; &#xCEF4;&#xB9C8;(,)&#xB85C; &#xAD6C;&#xBD84;</p>
+        <p>MMS&#xC758; &#xACBD;&#xC6B0; &#xD544;&#xC218;</p>
+        <p>&#xCD5C;&#xB300; 3&#xAC1C; &#xAE4C;&#xC9C0; &#xC9C0;&#xC815; &#xAC00;&#xB2A5;,
+          &#xCD5C;&#xB300; 50kb gif,png,jpg &#xD30C;&#xC77C;&#xD615;&#xC2DD;</p>
       </td>
     </tr>
     <tr>
-      <td style="text-align:left">&#xBC18;&#xD658;&#xAC12;</td>
-      <td style="text-align:left">&#xC131;&#xACF5;&#xC2DC;(OK), &#xC2E4;&#xD328;&#xC2DC;(&#xC5D0;&#xB7EC;&#xBA54;&#xC2DC;&#xC9C0;)</td>
+      <td style="text-align:left">&#xBC18;&#xD658; &#xAC12;</td>
+      <td style="text-align:left">&#xC131;&#xACF5; &#xC2DC;(OK), &#xC2E4;&#xD328; &#xC2DC;(&#xC5D0;&#xB7EC;&#xBA54;&#xC2DC;&#xC9C0;)</td>
     </tr>
   </tbody>
 </table>
 
-> 반환 값
+> ### **반환 값**
 
 
 

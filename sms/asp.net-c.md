@@ -19,7 +19,7 @@ description: 'ASP.NET(C#)를 이용한 SMS 웹 서비스 이용방법을 안내�
 ![](../.gitbook/assets/aspnet_3.png)
 
 ### 3. 아래 DpSms 웹 서비스URL을 입력하고 웹 참조 이름을 결정한 후 참조 추가 버튼을 누릅니다.
-
+> SMS 웹 참조 URL : http://websvc.nesolution.com/sms/sms.asmx
 ![](../.gitbook/assets/aspnet_2.png)
 
 ### 4. ㅁ

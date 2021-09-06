@@ -22,5 +22,5 @@
   * [ASP.NET\(C\#\)을 이용한 예제](sms/asp.net-c.md)
   * [ASP.NET\(VB\)을 이용한 예제](sms/asp.net-vb.md)
   * [ASP를 이용한 예제](sms/asp.md)
-  * [PHP을 이용한 예제보기](sms/php.md)
+  * [PHP를 이용한 예제](sms/php.md)
 

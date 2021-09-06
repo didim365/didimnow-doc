@@ -10,11 +10,11 @@ description: ASP를 이용한 SMS 웹 서비스 이용방법을 안내합니다.
 
 ### 1. SMS발송 정보를 입력 받을 폼을 작성합니다. \(예제소스에 포함\) <a id="1-visual-studio-net"></a>
 
-> DpSms 웹 참조 URL : [http://websvc.nesolution.com/sms/sms.asmx](http://websvc.nesolution.com/sms/sms.asmx)​
+> 계정 인증키는 \[계정관리 &gt; 호스팅 계정정보\]에서 확인 하실 수 있습니다.​
 
-![](https://gblobscdn.gitbook.com/assets%2F-Mi_8LPPppX55FEwiSXr%2F-MitPJX_mmCk_GIeDrEz%2F-MitQ0wZ9Er7XyLmyJPm%2Faspnet_1.png?alt=media&token=f971ce82-ce83-44ad-b7ce-a149380e1752)
+![](../.gitbook/assets/asp_1.png)
 
-### 2. 솔루션 탐색기에서 마우스 오른쪽을 클릭하여 웹 참조 메뉴를 선택합니다. <a id="2"></a>
+### 2. 편집기를 이용해 아래의 소스코드를 작성하여 SendSms.asp로 저장합니다. <a id="2"></a>
 
 ![](https://gblobscdn.gitbook.com/assets%2F-Mi_8LPPppX55FEwiSXr%2Fsync%2F66cdde2efe8e0c9368d075815e2cb8f45f6d850a.png?alt=media)
 

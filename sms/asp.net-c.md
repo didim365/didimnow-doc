@@ -10,9 +10,13 @@ description: 'ASP.NET(C#)를 이용한 SMS 웹 서비스 이용방법을 안내�
 
 ### 1. Visual Studio.NET을 열어 새로운 프로젝트를 생성합니다.
 
-![](../.gitbook/assets/aspnet_1.jpg)
+![](../.gitbook/assets/aspnet_1.png)
 
-![](../.gitbook/assets/aspnet_2.jpg)
+![](../.gitbook/assets/aspnet_2.png)
 
+### 2. 솔루션 탐색기에서 마우스 오른쪽을 클릭하여 웹 참조 메뉴를 선택합니다.
 
+![](../.gitbook/assets/aspnet_1.png)
+
+![](../.gitbook/assets/aspnet_2.png)
 

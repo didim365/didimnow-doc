@@ -20,11 +20,11 @@ description: ASP.NET(VB)를 이용한 SMS 웹 서비스 이용방법을 안내�
 
 > DpSms 웹 참조 URL : [http://websvc.nesolution.com/sms/sms.asmx](http://websvc.nesolution.com/sms/sms.asmx)​
 
-![](../.gitbook/assets/asp_vb_3%20%282%29%20%282%29%20%282%29.png)
+![](../.gitbook/assets/asp_vb_3%20%282%29%20%282%29%20%282%29%20%281%29.png)
 
 ![](../.gitbook/assets/asp_vb_4%20%282%29%20%282%29%20%282%29.png)
 
-![](../.gitbook/assets/asp_vb_5%20%282%29%20%282%29%20%282%29.png)
+![](../.gitbook/assets/asp_vb_5%20%282%29%20%282%29%20%282%29%20%281%29.png)
 
 ### 4. 아래와 같이 SMS발송 정보를 입력 받을 폼을 작성합니다. \(예제소스에 포함\)
 
@@ -181,7 +181,7 @@ End Function
 {% endhint %}
 
 {% hint style="danger" %}
-**실패 시   "Exception: 에러메시지"**
+**실패 시 "Exception: 에러메시지"**
 {% endhint %}
 
 ### 6. 실행결과 화면입니다.

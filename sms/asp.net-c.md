@@ -16,7 +16,7 @@ description: 'ASP.NET(C#)를 이용한 SMS 웹 서비스 이용방법을 안내�
 
 ### 2. 솔루션 탐색기에서 마우스 오른쪽을 클릭하여 웹 참조 메뉴를 선택합니다.
 
-![](../.gitbook/assets/asp_vb_2%20%282%29%20%282%29%20%282%29.png)
+![](../.gitbook/assets/asp_vb_2%20%282%29%20%282%29%20%282%29%20%281%29.png)
 
 ### 3. 아래 DpSms 웹 서비스URL을 입력하고 웹 참조 이름을 결정한 후 참조 추가 버튼을 누릅니다.
 
@@ -30,7 +30,7 @@ description: 'ASP.NET(C#)를 이용한 SMS 웹 서비스 이용방법을 안내�
 
 ### 4. 아래와 같이 SMS발송 정보를 입력 받을 폼을 작성합니다. \(예제소스에 포함\)
 
-![](../.gitbook/assets/asp_vb_6%20%282%29%20%282%29%20%282%29.png)
+![](../.gitbook/assets/asp_vb_6%20%282%29%20%282%29%20%282%29%20%281%29.png)
 
 ### 5. 메시지 전송 버튼을 더블 클릭하여 btnSend\_Click 이벤트에 아래의 소스 코드를 삽입합니다.
 
@@ -182,7 +182,7 @@ private  string ParseCv(HttpPostedFile fileBase)
 {% endhint %}
 
 {% hint style="danger" %}
-**실패 시   "Exception: 에러메시지"**
+**실패 시 "Exception: 에러메시지"**
 {% endhint %}
 
 ### 6. 실행결과 화면입니다.

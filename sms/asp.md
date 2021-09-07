@@ -166,7 +166,7 @@ end function
   </thead>
   <tbody>
     <tr>
-      <td style="text-align:left">stran_phone</td>
+      <td style="text-align:left">tran_phone</td>
       <td style="text-align:left">
         <p>&#xC218;&#xC2E0;&#xC790; &#xC804;&#xD654;&#xBC88;&#xD638;(&#xC0DD;&#xB7B5;&#xBD88;&#xAC00;),
           &#xC5EC;&#xB7EC;&#xBC88;&#xD638;&#xC77C; &#xACBD;&#xC6B0;&#xC5D0;&#xB294;
@@ -176,11 +176,11 @@ end function
       </td>
     </tr>
     <tr>
-      <td style="text-align:left">stran_callback</td>
+      <td style="text-align:left">tran_callback</td>
       <td style="text-align:left">&#xC1A1;&#xC2E0;&#xC790; &#xC804;&#xD654;&#xBC88;&#xD638;(&#xC0DD;&#xB7B5;&#xBD88;&#xAC00;)</td>
     </tr>
     <tr>
-      <td style="text-align:left">stran_date</td>
+      <td style="text-align:left">tran_date</td>
       <td style="text-align:left">
         <p>&#xC608;&#xC57D; &#xC804;&#xC1A1;&#xC2DC;&#xC5D0;&#xB9CC; &#xC0AC;&#xC6A9;,
           &#xD3EC;&#xB9F7;&#xC740; &#xC2DC;&#xBD84;&#xAE4C;&#xC9C0; &#xD3EC;&#xD568;&#xB41C;
@@ -190,7 +190,7 @@ end function
       </td>
     </tr>
     <tr>
-      <td style="text-align:left">stran_msg</td>
+      <td style="text-align:left">tran_msg</td>
       <td style="text-align:left">
         <p>&#xC804;&#xC1A1; &#xBA54;&#xC2DC;&#xC9C0;(&#xC0DD;&#xB7B5;&#xBD88;&#xAC00;).</p>
         <p>SMS : &#xCD5C;&#xB300; 80byte (&#xC6A9;&#xB7C9;&#xC774; &#xB118;&#xC73C;&#xBA74;

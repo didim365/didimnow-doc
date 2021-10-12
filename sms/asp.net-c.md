@@ -1,36 +1,38 @@
 ---
-description: 'ASP.NET(C#)를 이용한 SMS 웹 서비스 이용방법을 안내합니다.'
+description: ASP.NET(C#)를 이용한 SMS 웹 서비스 이용방법을 안내합니다.
 ---
 
-# ASP.NET\(C\#\)을 이용한 예제
+# ASP.NET(C#)을 이용한 예제
 
-## ASP.NET\(C\#\)를 이용한 SMS 웹 서비스 이용방법
+### ASP.NET(C#)를 이용한 SMS 웹 서비스 이용방법
 
-{% file src="../.gitbook/assets/sendsms\_sample\_aspnet.zip" caption="ASP.NET\(C\#\)를 이용한 예제소스 다운로드" %}
+{% file src="../.gitbook/assets/sendsms_sample_aspnet.zip" %}
+ASP.NET(C#)를 이용한 예제소스 다운로드
+{% endfile %}
 
-### 1. Visual Studio.NET을 열어 새로운 프로젝트를 생성합니다.
+#### 1. Visual Studio.NET을 열어 새로운 프로젝트를 생성합니다.
 
-![](../.gitbook/assets/aspnet_2.png)
+![](../.gitbook/assets/aspnet\_2.png)
 
-### 2. 솔루션 탐색기에서 마우스 오른쪽을 클릭하여 웹 참조 메뉴를 선택합니다.
+#### 2. 솔루션 탐색기에서 마우스 오른쪽을 클릭하여 웹 참조 메뉴를 선택합니다.
 
-![](../.gitbook/assets/asp_vb_2%20%282%29%20%282%29%20%282%29%20%281%29.png)
+![](<../.gitbook/assets/asp_vb\_2 (2) (2) (2).png>)
 
-### 3. 아래 DpSms 웹 서비스URL을 입력하고 웹 참조 이름을 결정한 후 참조 추가 버튼을 누릅니다.
+#### 3. 아래 DpSms 웹 서비스URL을 입력하고 웹 참조 이름을 결정한 후 참조 추가 버튼을 누릅니다.
 
 > SMS 웹 참조 URL : [http://websvc.nesolution.com/sms/sms.asmx](http://websvc.nesolution.com/sms/sms.asmx)
 
-![](../.gitbook/assets/asp_vb_3%20%282%29%20%282%29%20%282%29.png)
+![](<../.gitbook/assets/asp_vb\_3 (2) (2) (2).png>)
 
-![](../.gitbook/assets/asp_vb_4%20%282%29%20%282%29%20%282%29%20%281%29.png)
+![](<../.gitbook/assets/asp_vb\_4 (2) (2) (2) (1).png>)
 
-![](../.gitbook/assets/asp_vb_5%20%282%29%20%282%29%20%282%29.png)
+![](<../.gitbook/assets/asp_vb\_5 (2) (2) (2).png>)
 
-### 4. 아래와 같이 SMS발송 정보를 입력 받을 폼을 작성합니다. \(예제소스에 포함\)
+#### 4. 아래와 같이 SMS발송 정보를 입력 받을 폼을 작성합니다. (예제소스에 포함)
 
-![](../.gitbook/assets/asp_vb_6%20%282%29%20%282%29%20%282%29%20%281%29.png)
+![](<../.gitbook/assets/asp_vb\_6 (2) (2) (2).png>)
 
-### 5. 메시지 전송 버튼을 더블 클릭하여 btnSend\_Click 이벤트에 아래의 소스 코드를 삽입합니다.
+#### 5. 메시지 전송 버튼을 더블 클릭하여 btnSend_Click 이벤트에 아래의 소스 코드를 삽입합니다.
 
 ```csharp
 private void btnSend_Click(object sender, System.EventArgs e)
@@ -77,103 +79,21 @@ private  string ParseCv(HttpPostedFile fileBase)
 }
 ```
 
-> ### **파라미터** ✔
+> #### **파라미터** ✔
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left"><b>&#xD30C;&#xB77C;&#xBBF8;&#xD130;</b>
-      </th>
-      <th style="text-align:left"><b>&#xC124;&#xBA85;</b>
-      </th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">stran_phone</td>
-      <td style="text-align:left">
-        <p>&#xC218;&#xC2E0;&#xC790; &#xC804;&#xD654;&#xBC88;&#xD638;(&#xC0DD;&#xB7B5;&#xBD88;&#xAC00;),
-          &#xC5EC;&#xB7EC;&#xBC88;&#xD638;&#xC77C; &#xACBD;&#xC6B0;&#xC5D0;&#xB294;
-          ;&#xC73C;&#xB85C; &#xAD6C;&#xBD84;.</p>
-        <p>&#xC804;&#xD654;&#xBC88;&#xD638; &#xAD6C;&#xBD84;&#xC790; &#xB300;&#xC26C;(-)&#xB294;
-          &#xC788;&#xAC70;&#xB098; &#xC5C6;&#xAC70;&#xB098; &#xC0C1;&#xAD00;&#xC5C6;&#xC74C;</p>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">stran_callback</td>
-      <td style="text-align:left">&#xC1A1;&#xC2E0;&#xC790; &#xC804;&#xD654;&#xBC88;&#xD638;(&#xC0DD;&#xB7B5;&#xBD88;&#xAC00;)</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">stran_date</td>
-      <td style="text-align:left">
-        <p>&#xC608;&#xC57D; &#xC804;&#xC1A1;&#xC2DC;&#xC5D0;&#xB9CC; &#xC0AC;&#xC6A9;,
-          &#xD3EC;&#xB9F7;&#xC740; &#xC2DC;&#xBD84;&#xAE4C;&#xC9C0; &#xD3EC;&#xD568;&#xB41C;
-          &#xB0A0;&#xC9DC; &#xD3EC;&#xB9F7;.</p>
-        <p>&#xC0DD;&#xB7B5;&#xC2DC;&#xC5D0;&#xB294; &#xC989;&#xC2DC; &#xC804;&#xC1A1;(&#xC608;.2003-01-01
-          13:01)</p>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">stran_msg</td>
-      <td style="text-align:left">
-        <p>&#xC804;&#xC1A1; &#xBA54;&#xC2DC;&#xC9C0;(&#xC0DD;&#xB7B5;&#xBD88;&#xAC00;).</p>
-        <p>SMS : &#xCD5C;&#xB300; 80byte (&#xC6A9;&#xB7C9;&#xC774; &#xB118;&#xC73C;&#xBA74;
-          &#xC9E4;&#xB824;&#xC11C; &#xC804;&#xC1A1;)</p>
-        <p>LMS/MMS : &#xCD5C;&#xB300; 2,000byte</p>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">guest_no</td>
-      <td style="text-align:left">&#xACC4;&#xC815;&#xBC88;&#xD638;(&#xC608;.000001)</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">guest_key</td>
-      <td style="text-align:left">
-        <p>&#xAD00;&#xB9AC;&#xC790; &#xACC4;&#xC815;&#xACFC; &#xC554;&#xD638;&#xB97C;
-          &#xC774;&#xC6A9;&#xD574; &#xC0DD;&#xC131;&#xD55C; &#xACC4;&#xC815; &#xC778;&#xC99D;
-          &#xD0A4;</p>
-        <p>(&#xD68C;&#xC6D0;&#xC804;&#xC6A9; &#xC0AC;&#xC774;&#xD2B8;&#xC5D0;&#xC11C;
-          &#xD655;&#xC778; &#xAC00;&#xB2A5;)</p>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">type</td>
-      <td style="text-align:left">
-        <p>&#xBA54;&#xC2DC;&#xC9C0; &#xC804;&#xC1A1; &#xD0C0;&#xC785;. &quot;SMS&quot;
-          / &quot;LMS&quot; / &quot;MMS&quot; / &quot;AUTO&quot; &#xC911;&#xC5D0;&#xC11C;
-          &#xC120;&#xD0DD;.</p>
-        <p>LMS/MMS &#xC0AC;&#xC6A9; &#xC2DC; &#xC11C;&#xBE44;&#xC2A4; &#xC2E0;&#xCCAD;&#xC774;
-          &#xB418;&#xC5B4; &#xC788;&#xC5B4;&#xC57C; &#xD568;</p>
-        <p>&#xBE48; &#xAC12;&#xC744; &#xB118;&#xAE30;&#xBA74; &quot;SMS&quot;&#xD615;&#xC2DD;&#xC73C;&#xB85C;
-          &#xBC1C;&#xC1A1;</p>
-        <p>&quot;AUTO&quot;&#xB294; &#xBA54;&#xC2DC;&#xC9C0;&#xC758; &#xAE38;&#xC774;&#xB97C;
-          &#xCCB4;&#xD06C;&#xD558;&#xC5EC; 80byte&#xB97C; &#xCD08;&#xACFC; &#xC2DC;
-          &#xC790;&#xB3D9;&#xC73C;&#xB85C; LMS&#xB85C; &#xBC1C;&#xC1A1;</p>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">subject</td>
-      <td style="text-align:left">
-        <p>LMS/MMS &#xBA54;&#xC2DC;&#xC9C0;&#xC758; &#xBA54;&#xC2DC;&#xC9C0; &#xC81C;&#xBAA9;.</p>
-        <p>LMS/MMS &#xBC29;&#xC2DD;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xACBD;&#xC6B0;
-          &#xD544;&#xC218;.</p>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">files</td>
-      <td style="text-align:left">
-        <p>MMS &#xCCA8;&#xBD80; &#xC774;&#xBBF8;&#xC9C0; &#xD30C;&#xC77C;&#xBA85;.</p>
-        <p>&#xCCA8;&#xBD80; &#xD30C;&#xC77C;&#xC774; 2&#xAC1C; &#xC774;&#xC0C1;&#xC778;
-          &#xACBD;&#xC6B0; &#xCEF4;&#xB9C8;(,)&#xB85C; &#xAD6C;&#xBD84;</p>
-        <p>MMS&#xC758; &#xACBD;&#xC6B0; &#xD544;&#xC218;</p>
-        <p>&#xCD5C;&#xB300; 3&#xAC1C; &#xAE4C;&#xC9C0; &#xC9C0;&#xC815; &#xAC00;&#xB2A5;,
-          &#xCD5C;&#xB300; 50kb gif,png,jpg &#xD30C;&#xC77C;&#xD615;&#xC2DD;</p>
-      </td>
-    </tr>
-  </tbody>
-</table>
+| **파라미터**       | **설명**                                                                                                                                                                         |
+| -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| stran_phone    | <p>수신자 전화번호(생략불가), 여러번호일 경우에는 ;으로 구분.</p><p>전화번호 구분자 대쉬(-)는 있거나 없거나 상관없음</p>                                                                                                   |
+| stran_callback | 송신자 전화번호(생략불가)                                                                                                                                                                 |
+| stran_date     | <p>예약 전송시에만 사용, 포맷은 시분까지 포함된 날짜 포맷.</p><p>생략시에는 즉시 전송(예.2003-01-01 13:01)</p>                                                                                                  |
+| stran_msg      | <p>전송 메시지(생략불가).</p><p>SMS : 최대 80byte (용량이 넘으면 짤려서 전송)</p><p>LMS/MMS : 최대 2,000byte</p>                                                                                       |
+| guest_no       | 계정번호(예.000001)                                                                                                                                                                 |
+| guest_key      | <p>관리자 계정과 암호를 이용해 생성한 계정 인증 키</p><p>(회원전용 사이트에서 확인 가능)</p>                                                                                                                    |
+| type           | <p>메시지 전송 타입. "SMS" / "LMS" / "MMS" / "AUTO" 중에서 선택.</p><p>LMS/MMS 사용 시 서비스 신청이 되어 있어야 함</p><p>빈 값을 넘기면 "SMS"형식으로 발송</p><p>"AUTO"는 메시지의 길이를 체크하여 80byte를 초과 시 자동으로 LMS로 발송</p> |
+| subject        | <p>LMS/MMS 메시지의 메시지 제목.</p><p>LMS/MMS 방식을 사용하는 경우 필수.</p>                                                                                                                      |
+| files          | <p>MMS 첨부 이미지 파일명.</p><p>첨부 파일이 2개 이상인 경우 컴마(,)로 구분</p><p>MMS의 경우 필수</p><p>최대 3개 까지 지정 가능, 최대 50kb gif,png,jpg 파일형식</p>                                                        |
 
-> ### **반환 값** ✔
+> #### **반환 값** ✔
 
 {% hint style="success" %}
 #### 성공 시    "OK"
@@ -183,15 +103,16 @@ private  string ParseCv(HttpPostedFile fileBase)
 **실패 시 "Exception: 에러메시지"**
 {% endhint %}
 
-### 6. 실행결과 화면입니다.
+####
+
+#### 6. 실행결과 화면입니다.
 
 > 정상적으로 메시지가 발송되었을 경우
 
-![](../.gitbook/assets/asp_vb_7%20%282%29%20%282%29%20%282%29%20%281%29.png)
+![](<../.gitbook/assets/asp_vb\_7 (2) (2) (2) (1).png>)
 
 > 오류로 인하여 메시지를 발송하지 못했을 경우
 
-![](../.gitbook/assets/asp_vb_8%20%282%29%20%282%29%20%282%29%20%281%29.png)
+![](<../.gitbook/assets/asp_vb\_8 (2) (2) (2) (1).png>)
 
-![](../.gitbook/assets/asp_vb_9%20%282%29%20%282%29%20%282%29%20%282%29.png)
-
+![](<../.gitbook/assets/asp_vb\_9 (2) (2) (2) (2).png>)

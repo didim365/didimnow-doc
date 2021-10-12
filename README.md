@@ -9,4 +9,3 @@ description: DidimNow에서 제공하는 다양한 상품을 보다 쉽고 빠�
 {% endhint %}
 
 > * SMS 웹 서비스 [이용방법 ](sms/)
-

@@ -12,7 +12,7 @@ PHP를 이용한 예제소스 다운로드
 
 #### 1. SMS발송 정보를 입력 받을 폼을 작성합니다. (예제소스에 포함) <a href="#1-visual-studio-net" id="1-visual-studio-net"></a>
 
-> 계정 인증키는 \[계정관리 > 호스팅 계정정보]에서 확인 하실 수 있습니다.​
+> 계정 인증키는 \[부가서비스 서서서비스관리서비스관리서비스관리서비스관리> 계정 인증키는 \[부가서비스(호스팅서비스) > 서비스관리] 에서 확인하실 수 있습니다.계정 인증키는 \[부가서비스(호스팅서비스) > 서비스관리] 에서 확인하실 수 있습니다..관리 > 호스팅 계정정보]에서 확인 하실 수 있습니다.​
 
 ![](../.gitbook/assets/php\_1.png)
 
@@ -78,7 +78,6 @@ $type = urlencode(iconv('UTF-8', 'EUC-KR',$_POST["com_type"])); //발송구분
 $subject = urlencode(iconv('UTF-8', 'EUC-KR',$_POST["subject"])); //LMS / MMS 발송시 제목
 $files = $_POST["Base64files"];//MMS 발송시 첨부파일
 
-
 if($type != "MMS")
 {
 /*======================================================================*\
@@ -122,7 +121,6 @@ else
 	// 출력 페이지가 utf-8 일때
 	$send_result = iconv('EUC-KR', 'UTF-8', $snoopy->results);	
 }
-
 ?>
 
 <HTML>

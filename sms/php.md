@@ -6,7 +6,7 @@ description: PHP를 이용한 SMS 웹 서비스 이용방법을 안내합니다.
 
 ### PHP를 이용한 SMS 웹 서비스 이용방법 <a href="#asp-net-vb-sms" id="asp-net-vb-sms"></a>
 
-{% file src="../.gitbook/assets/sendsms_sample_asp.zip" %}
+{% file src="../.gitbook/assets/SendSms_Sample_Php.zip" %}
 PHP를 이용한 예제소스 다운로드
 {% endfile %}
 
@@ -16,7 +16,7 @@ PHP를 이용한 예제소스 다운로드
 
 ![](../.gitbook/assets/php\_1.png)
 
-#### 2. 편집기를 이용해 아래의 소스코드를 작성하여 SendSms.asp로 저장합니다. <a href="#2" id="2"></a>
+#### 2. 편집기를 이용해 아래의 소스코드를 작성하여 SendSms.php 저장합니다. <a href="#2" id="2"></a>
 
 > PHP로 DpSms 웹 서비스를 이용하여 메시지를 보내기 위해서는 [**Snoopy.php**](https://sourceforge.net/projects/snoopy/) 파일을 참조해야만 합니다.
 

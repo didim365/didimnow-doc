@@ -4,21 +4,21 @@ description: ASP를 이용한 SMS 웹 서비스 이용방법을 안내합니다.
 
 # ASP를 이용한 예제
 
-### ASP를 이용한 SMS 웹 서비스 이용방법 <a href="asp-net-vb-sms" id="asp-net-vb-sms"></a>
+### ASP를 이용한 SMS 웹 서비스 이용방법 <a href="#asp-net-vb-sms" id="asp-net-vb-sms"></a>
 
 {% file src="../.gitbook/assets/sendsms_sample_asp (1).zip" %}
 ASP를 이용한 예제소스 다운로드
 {% endfile %}
 
-#### 1. SMS발송 정보를 입력 받을 폼을 작성합니다. (예제소스에 포함) <a href="1-visual-studio-net" id="1-visual-studio-net"></a>
+#### 1. SMS발송 정보를 입력 받을 폼을 작성합니다. (예제소스에 포함) <a href="#1-visual-studio-net" id="1-visual-studio-net"></a>
 
 > 계정 인증키는 \[계정관리 > 호스팅 계정정보]에서 확인 하실 수 있습니다.​
 
 ![](../.gitbook/assets/asp\_1.png)
 
-#### 2. 편집기를 이용해 아래의 소스코드를 작성하여 SendSms.asp로 저장합니다. <a href="2" id="2"></a>
+#### 2. 편집기를 이용해 아래의 소스코드를 작성하여 SendSms.asp로 저장합니다. <a href="#2" id="2"></a>
 
-> 하단의 예제는 MSXML 6.0을 사용합니다.                                                           ** **[**MSXML 6.0 다운로드**](https://www.microsoft.com/ko-kr/download/search.aspx?q=MSXML)****
+> 하단의 예제는 MSXML 6.0을 사용합니다.                                                           **** [**MSXML 6.0 다운로드**](https://www.microsoft.com/ko-kr/download/search.aspx?q=MSXML)****
 
 ```markup
 <%
@@ -155,21 +155,21 @@ end function
 </HTML>
 ```
 
-> #### **파라미터** ✔ <a href="undefined" id="undefined"></a>
+> #### **파라미터** ✔ <a href="#undefined" id="undefined"></a>
 
-| **파라미터**      | **설명**                                                                                                                                                                         |
-| ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| tran_phone    | <p>수신자 전화번호(생략불가), 여러번호일 경우에는 ;으로 구분.</p><p>전화번호 구분자 대쉬(-)는 있거나 없거나 상관없음</p>                                                                                                   |
-| tran_callback | 송신자 전화번호(생략불가)                                                                                                                                                                 |
-| tran_date     | <p>예약 전송시에만 사용, 포맷은 시분까지 포함된 날짜 포맷.</p><p>생략시에는 즉시 전송(예.2003-01-01 13:01)</p>                                                                                                  |
-| tran_msg      | <p>전송 메시지(생략불가).</p><p>SMS : 최대 80byte (용량이 넘으면 짤려서 전송)</p><p>LMS/MMS : 최대 2,000byte</p>                                                                                       |
-| guest_no      | 계정번호(예.000001)                                                                                                                                                                 |
-| guest_key     | <p>관리자 계정과 암호를 이용해 생성한 계정 인증 키</p><p>(회원전용 사이트에서 확인 가능)</p>                                                                                                                    |
-| type          | <p>메시지 전송 타입. "SMS" / "LMS" / "MMS" / "AUTO" 중에서 선택.</p><p>LMS/MMS 사용 시 서비스 신청이 되어 있어야 함</p><p>빈 값을 넘기면 "SMS"형식으로 발송</p><p>"AUTO"는 메시지의 길이를 체크하여 80byte를 초과 시 자동으로 LMS로 발송</p> |
-| subject       | <p>LMS/MMS 메시지의 메시지 제목.</p><p>LMS/MMS 방식을 사용하는 경우 필수.</p>                                                                                                                      |
-| files         | <p>MMS 첨부 이미지 파일명.</p><p>첨부 파일이 2개 이상인 경우 컴마(,)로 구분</p><p>MMS의 경우 필수</p><p>최대 3개 까지 지정 가능, 최대 50kb gif,png,jpg 파일형식</p>                                                        |
+| **파라미터**       | **설명**                                                                                                                                                                         |
+| -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| tran\_phone    | <p>수신자 전화번호(생략불가), 여러번호일 경우에는 ;으로 구분.</p><p>전화번호 구분자 대쉬(-)는 있거나 없거나 상관없음</p>                                                                                                   |
+| tran\_callback | 송신자 전화번호(생략불가)                                                                                                                                                                 |
+| tran\_date     | <p>예약 전송시에만 사용, 포맷은 시분까지 포함된 날짜 포맷.</p><p>생략시에는 즉시 전송(예.2003-01-01 13:01)</p>                                                                                                  |
+| tran\_msg      | <p>전송 메시지(생략불가).</p><p>SMS : 최대 80byte (용량이 넘으면 짤려서 전송)</p><p>LMS/MMS : 최대 2,000byte</p>                                                                                       |
+| guest\_no      | 계정번호(예.000001)                                                                                                                                                                 |
+| guest\_key     | <p>관리자 계정과 암호를 이용해 생성한 계정 인증 키</p><p>(회원전용 사이트에서 확인 가능)</p>                                                                                                                    |
+| type           | <p>메시지 전송 타입. "SMS" / "LMS" / "MMS" / "AUTO" 중에서 선택.</p><p>LMS/MMS 사용 시 서비스 신청이 되어 있어야 함</p><p>빈 값을 넘기면 "SMS"형식으로 발송</p><p>"AUTO"는 메시지의 길이를 체크하여 80byte를 초과 시 자동으로 LMS로 발송</p> |
+| subject        | <p>LMS/MMS 메시지의 메시지 제목.</p><p>LMS/MMS 방식을 사용하는 경우 필수.</p>                                                                                                                      |
+| files          | <p>MMS 첨부 이미지 파일명.</p><p>첨부 파일이 2개 이상인 경우 컴마(,)로 구분</p><p>MMS의 경우 필수</p><p>최대 3개 까지 지정 가능, 최대 50kb gif,png,jpg 파일형식</p>                                                        |
 
-> ### **반환 값** ✔ <a href="undefined-1" id="undefined-1"></a>
+> ### **반환 값** ✔ <a href="#undefined-1" id="undefined-1"></a>
 
 {% hint style="success" %}
 #### 성공 시    "OK"
